@@ -1,0 +1,95 @@
+<!-- https://groups.google.com/forum/#!topic/
+                               mathjax-users/jUtewUcE2bY -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX AMSmath Ready",function () {
+    var seteqsectionDefault = {name: "", num: 0};
+    var seteqsections = {}, seteqsection = seteqsectionDefault;
+    var TEX = MathJax.InputJax.TeX, PARSE = TEX.Parse;
+    var AMS = MathJax.Extension["TeX/AMSmath"];
+    TEX.Definitions.Add({
+    macros: {
+        seteqsection: "mySection",
+        seteqnumber: "mySetEqNumber"
+    }
+    });
+
+    PARSE.Augment({
+    mySection: function (name) {
+        seteqsection.num = AMS.number;
+        var n = this.GetArgument(name);
+        if (n === "") {
+            seteqsection = seteqsectionDefault;
+        } else {
+            if (!seteqsections["_"+n])
+                seteqsections["_"+n] = {name:n, num:0};
+            seteqsection = seteqsections["_"+n];
+        }
+        AMS.number = seteqsection.num;
+    },
+    mySetEqNumber: function (name) {
+        var n = this.GetArgument(name);
+        if (!n || !n.match(/^ *[0-9]+ *$/))
+            n = "";
+        else
+            n = parseInt(n)-1;
+        <!-- $ syntax highlighting -->
+        if (n === "" || n < 1)
+            TEX.Error
+            ("Argument to "+name+" should be a positive integer");
+        AMS.number = n;
+    }
+    });
+    MathJax.Hub.Config({
+    TeX: {
+        equationNumbers: {
+            formatTag: function (n) {
+                <!-- if not numeric, don't include the chapter -->
+                if (!n.match(/^ *[0-9]+ *$/ ))
+                <!-- $ syntax highlighting -->
+                    return "("+(n).replace(/^\./,"")+")" ;
+                else
+                    return "("+(seteqsection.name+"."+n).replace(/^\./,"")+")" ;
+            },
+            formatID: function (n) {
+                n = (seteqsection.name+'.'+n).replace
+                    (/[:"'<>&]/g,"").replace(/^\./,"");
+                return 'mjx-eqn-' + n;
+            }
+        }
+    }
+    });
+});
+</script>
+
+<!-- http://docs.mathjax.org/en/latest/options/ThirdParty.html -->
+<script type="text/x-mathjax-config">
+  MathJax.Ajax.config.path["Contrib"] =
+    "https://cdn.mathjax.org/mathjax/contrib";
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    TeX: {
+        extensions: ["autoload-all.js"] ,
+        equationNumbers: {
+            autoNumber: "AMS"
+        }
+    }
+});
+</script>
+
+<!-- Alternative CDN provider: -->
+<script type="text/javascript" async
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_HTML-full">
+</script>
+
+<!-- No longer supported after April 30, 2017: -->
+<!--
+<script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full">
+</script>
+-->
+ <script type="text/javascript"
+   src="navigation.js">
+   </script>
+

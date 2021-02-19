@@ -1,0 +1,140 @@
+@import url("lwarp.css") ;
+
+div.sidetoccontainer{
+   position: fixed;
+   z-index: 1;
+   /* font-size: 1.5em; */
+   overflow-y: auto;
+   top: 42px;
+   width: 400px;
+   /* bottom: 0; */
+   /* font-size: 90%; */
+   display: none;		/**/
+   line-height: 1.0 ;
+   background: #e6e6e6;
+}
+
+nav.sidetoc p {
+    line-height: 1.1;
+    margin: .1ex .1em .1ex .1em;
+    text-indent: 0;
+}
+
+img, img.hyperimage, img.borderimage {
+    max-width: 600px;
+    border: 0px solid silver;
+    box-shadow: 0px 0px 0px #808080 ;
+    padding: .0% ;
+    margin: .0% ;
+    background: none ;
+}
+
+body {
+    background: #ffffff ;
+    color: black ;
+    margin:0em ;
+    padding:0em ;
+    font-size: 90% ;
+    line-height: 1.2 ;
+}
+
+div.bodycontainer{
+    float: right;
+    width: 100%;
+}
+
+section.textbody{
+    margin: 3em 16% 0ex 1%;
+}
+
+blockquote p{
+    font-size: 100%
+}
+
+nav {
+    font-family: "DejaVu Sans", "Bitstream Vera Sans",
+        Geneva, Verdana, sans-serif ;
+    margin-bottom: 4ex ;
+    font-size: 1.5em;
+}
+
+div.sidetoctitle{
+    display: none;
+}
+
+nav.sidetoc p a.toccurrent{
+    color: Blue;
+}
+
+nav.topnavigation{
+    display: block;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    background: #ffffff;
+    text-align:center;
+}
+
+a.topnavlink{
+    float: right;
+    padding-left: 0ex;
+    padding-right: 3ex;
+}
+
+a.topnavcontents{
+    float: left;
+    padding-right: 3ex;
+    padding-left:1ex;
+}
+
+/* trick to ensure link targets are not obscured by header */
+h3::before{
+    display: block; 
+    content: " "; 
+    margin-top: -42px; 
+    height: 42px; 
+    visibility: hidden; 
+    pointer-events: none;
+}
+
+h4::before{
+    display: block; 
+    content: " "; 
+    margin-top: -42px; 
+    height: 42px; 
+    visibility: hidden; 
+    pointer-events: none;
+}
+
+h5::before{
+    display: block; 
+    content: " "; 
+    margin-top: -42px; 
+    height: 42px; 
+    visibility: hidden; 
+    pointer-events: none;
+}
+
+a:visited { color: #000080;}
+
+div.titlepage h3{
+    font-family: "DejaVu Sans", "Bitstream Vera Sans",
+		 Geneva, Verdana, sans-serif ;
+    font-size: 2em;
+}
+
+hr.titlehrule{
+    border: 2px solid;
+    border-color: #6159d6;
+}
+
+div.titlepage span.textcolor{
+    font-size: 170%;
+}
+
+div.minipage p{
+    text-align: left;
+}
+
+

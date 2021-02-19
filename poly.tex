@@ -1,0 +1,135 @@
+\documentclass[a4paper, 10pt, dvipsnames]{book}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage[mathjax,HTMLFilename={node-},latexmk,HomeHTMLFilename=index,]{lwarp}
+\CSSFilename{map555.css}
+
+
+\def\TheTitle{MAP555 : Signal Processing}
+
+\boolfalse{FileSectionNames}  % If false, numbers the files.
+\setcounter{tocdepth}{2}        % Include subsections in the \TOC.
+\setcounter{secnumdepth}{3}     % Number down to subsections.
+\setcounter{FileDepth}{1}       % Split \HTML\ files at sections
+\booltrue{CombineHigherDepths}  % Combine parts/chapters/sections
+\setcounter{SideTOCDepth}{1}    % Include subsections in the side\TOC
+\HTMLTitle{MAP555 : Signal Processing}       % Overrides \title for the web page.
+\HTMLAuthor{Rémi Flamary}        % Sets the HTML meta author tag.
+\HTMLLanguage{en-US}            % Sets the HTML meta language.
+\HTMLDescription{Lecture notes for MAP555 : Signal Processing}% Sets the HTML meta 
+\MathJaxFilename{MAP555_mathjax.txt}
+\HTMLPageBottom{<p><img alt="Creative
+Commons License" style="border-width:0"
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /> Rémi Flamary</p>}
+
+\renewcommand{\theHTMLTitleSection}{\theHTMLTitle}
+
+\usepackage{amsmath,amssymb,amsthm}       
+\usepackage{lmodern}
+%\usepackage[french]{babel}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[pdftex,linktocpage,pdfstartview=FitH,colorlinks=true,linkcolor=blue,citecolor=magenta]{hyperref}
+%\usepackage[pagebackref,hyperindex=true]{hyperref}
+\usepackage{lipsum} 
+% minitoc
+\usepackage{minitoc}
+\setcounter{minitocdepth}{2}
+\mtcindent=10pt
+
+\mtcsetfeature{minitoc}{open}{\vspace{1.5mm}}
+\mtcsetfeature{minitoc}{close}{\vspace{1.5mm}}
+
+\setcounter{tocdepth}{2}
+
+\let\minitocORIG\minitoc
+\renewcommand{\minitoc}{\minitocORIG \vspace{1.5em}}
+
+%nouvelles polices pour minitoc
+\renewcommand{\mtcfont}{\sffamily\small}
+\renewcommand{\mtcSfont}{\sffamily\small\upshape\bfseries}
+\renewcommand{\mtcSSfont}{\sffamily\small}
+\renewcommand{\mtcSSSfont}{\sffamily\small}
+\renewcommand{\mtifont}{\sffamily\large\bfseries}
+\renewcommand{\ptifont}{\sffamily\Huge\bfseries}
+
+
+
+
+
+\author{Rémi Flamary}
+%\date{''date de fin de rédaction''} 
+ 
+\begin{document} 
+
+%%\pagenumbering{Alph} % to stop hyperref warnings
+% \begin{titlepage}
+%   \thispagestyle{empty}
+%   \vspace*{-2cm}
+%   %\hfill\includegraphics[width=4cm,alt={Course logo.}]{logo.png}
+%   \vspace*{2cm}\vfill
+%   {\noindent\huge\sffamily \TheTitle\\
+%   \warpprintonly{\rule{\textwidth}{1pt}}\par}
+%   \warpHTMLonly{<hr class="titlehrule">}
+%   \vspace{\baselineskip} {\noindent\Large\sffamily Rémi Flamary}\par
+%   \vspace{\baselineskip}
+% %   \begin{center}\minipagefullwidth
+% %     \begin{minipage}[t]{.9\linewidth}
+% %       \noindent\LARGE\sffamily Corrections by:\\
+% %       \begin{multicols}{2}
+% %         \TheHeroes
+% %       \end{multicols}
+% %     \end{minipage}
+% %   \end{center}
+%   \vfill\vfill
+% \end{titlepage} 
+%\pagenumbering{roman}
+\title{MAP555 : Signal Processing}
+\maketitle
+
+\warpHTMLonly{ This document contains lecture notes from the Course MAP555 :
+Signal Processing from the Applied Mathematics department of
+\href{https://www.polytechnique.edu/en}{École
+Polytechnique}.
+
+The document is also in PDF format \href{poly.pdf}{here}
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+}
+
+
+\tableofcontents
+
+%\part{Analog signal processing}
+\chapter{Introduction}
+
+\section{Signal processing}
+\label{sec:}
+
+\lipsum[2-4]
+
+\section{The reign of digital}
+
+\section{Signals and definitions}
+
+
+\chapter{Fourier analysis and analog filtering}
+
+
+\label{sec:}
+%\lipsum[2-4]
+\section{Fourier transform}
+\label{sec:}
+%\lipsum[2-4]
+\section{Frequency response and filtering}
+\label{sec:}
+%\lipsum[2-4]
+\section{Applications of analog signal processing}
+\label{sec:}
+%\lipsum[2-4]
+
+\chapter{Digital signal processing}
+
+\chapter{Signal representations}
+
+\end{document}
