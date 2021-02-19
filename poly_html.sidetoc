@@ -1,11 +1,23 @@
 \contentsline {chapter}{\numberline {1}{\ignorespaces Introduction\relax }}{5}
 \contentsline {section}{\numberline {1.1}{\ignorespaces Signal processing\relax }}{6}
-\contentsline {section}{\numberline {1.2}{\ignorespaces The reign of digital\relax }}{8}
-\contentsline {section}{\numberline {1.3}{\ignorespaces Signals and definitions\relax }}{10}
+\contentsline {section}{\numberline {1.2}{\ignorespaces Definitions and signal properties\relax }}{8}
+\contentsline {section}{\numberline {1.3}{\ignorespaces Bibliographical notes\relax }}{10}
 \contentsline {chapter}{\numberline {2}{\ignorespaces Fourier analysis and analog filtering\relax }}{12}
 \contentsline {section}{\numberline {2.1}{\ignorespaces Fourier transform\relax }}{13}
 \contentsline {section}{\numberline {2.2}{\ignorespaces Frequency response and filtering\relax }}{15}
 \contentsline {section}{\numberline {2.3}{\ignorespaces Applications of analog signal processing\relax }}{17}
 \contentsline {chapter}{\numberline {3}{\ignorespaces Digital signal processing\relax }}{19}
-\contentsline {chapter}{\numberline {4}{\ignorespaces Signal representations\relax }}{21}
+\contentsline {section}{\numberline {3.1}{\ignorespaces Sampling and Analog/Digital conversion\relax }}{20}
+\contentsline {section}{\numberline {3.2}{\ignorespaces Digital filtering\relax }}{22}
+\contentsline {section}{\numberline {3.3}{\ignorespaces Finite signals\relax }}{24}
+\contentsline {section}{\numberline {3.4}{\ignorespaces Applications of DSP\relax }}{26}
+\contentsline {chapter}{\numberline {4}{\ignorespaces Random signals\relax }}{28}
+\contentsline {section}{\numberline {4.1}{\ignorespaces Random Signals and Correlations\relax }}{29}
+\contentsline {section}{\numberline {4.2}{\ignorespaces Frequency representation of random signals\relax }}{31}
+\contentsline {section}{\numberline {4.3}{\ignorespaces AR modeling and linear prediction\relax }}{33}
+\contentsline {chapter}{\numberline {5}{\ignorespaces Signal representations\relax }}{35}
+\contentsline {section}{\numberline {5.1}{\ignorespaces Short Time Fourier Transform\relax }}{36}
+\contentsline {section}{\numberline {5.2}{\ignorespaces Common signal representations\relax }}{38}
+\contentsline {section}{\numberline {5.3}{\ignorespaces Source separation and dictionary learning\relax }}{40}
+\contentsline {section}{\numberline {5.4}{\ignorespaces Machine learning for signal processing\relax }}{42}
 
