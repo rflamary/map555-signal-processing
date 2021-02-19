@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Rémi Flamary" />
+<meta name="generator" content="LaTeX Lwarp package" />
+<meta name="description" content="Lecture notes for MAP555 :      Signal Processing" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<title>MAP555 : Signal Processing</title>
+<link rel="stylesheet" type="text/css" href="map555.css" />
+
+
+
+<!-- https://groups.google.com/forum/#!topic/
+                                       mathjax-users/jUtewUcE2bY -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX AMSmath Ready",function () {
+      var seteqsectionDefault = {name: "", num: 0};
+      var seteqsections = {}, seteqsection = seteqsectionDefault;
+      var TEX = MathJax.InputJax.TeX, PARSE = TEX.Parse;
+      var AMS = MathJax.Extension["TeX/AMSmath"];
+      TEX.Definitions.Add({
+      macros: {
+            seteqsection: "mySection",
+            seteqnumber: "mySetEqNumber"
+      }
+      });
+
+
+      PARSE.Augment({
+      mySection: function (name) {
+            seteqsection.num = AMS.number;
+            var n = this.GetArgument(name);
+            if (n === "") {
+                seteqsection = seteqsectionDefault;
+            } else {
+                if (!seteqsections["_"+n])
+                     seteqsections["_"+n] = {name:n, num:0};
+                seteqsection = seteqsections["_"+n];
+            }
+            AMS.number = seteqsection.num;
+      },
+      mySetEqNumber: function (name) {
+            var n = this.GetArgument(name);
+            if (!n || !n.match(/^ *[0-9]+ *$/))
+                n = "";
+            else
+                n = parseInt(n)-1;
+            <!-- $ syntax highlighting -->
+            if (n === "" || n < 1)
+                TEX.Error
+                ("Argument to "+name+" should be a positive integer");
+            AMS.number = n;
+      }
+      });
+      MathJax.Hub.Config({
+      TeX: {
+            equationNumbers: {
+                formatTag: function (n) {
+                     <!-- if not numeric, don't include the chapter -->
+                     if (!n.match(/^ *[0-9]+ *$/ ))
+                     <!-- $ syntax highlighting -->
+                            return "("+(n).replace(/^\./,"")+")" ;
+                     else
+                            return "("+(seteqsection.name+"."+n).replace(/^\./,"")+")" ;
+                },
+                formatID: function (n) {
+                     n = (seteqsection.name+'.'+n).replace
+                            (/[:"'<>&]/g,"").replace(/^\./,"");
+                     return 'mjx-eqn-' + n;
+                }
+            }
+      }
+      });
+});
+</script>
+
+
+<!-- http://docs.mathjax.org/en/latest/options/ThirdParty.html -->
+<script type="text/x-mathjax-config">
+  MathJax.Ajax.config.path["Contrib"] =
+      "https://cdn.mathjax.org/mathjax/contrib";
+</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+      TeX: {
+            extensions: ["autoload-all.js"] ,
+            equationNumbers: {
+                autoNumber: "AMS"
+            }
+      }
+});
+</script>
+
+
+<!-- Alternative CDN provider: -->
+<script type="text/javascript" async
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_HTML-full">
+</script>
+
+
+<!-- No longer supported after April 30, 2017: -->
+<!--
+<script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full">
+</script>
+-->
+ <script type="text/javascript"
+   src="navigation.js">
+   </script>
+
+
+
+</head>
+<body>
+
+
+<a id="poly-autopage-20"></a>
+<nav class="topnavigation" ><a href="index.html" class="linkhome" >
+Home</a></nav>
+
+
+<div class="bodyandsidetoc" >
+<div class="sidetoccontainer" >
+
+
+<nav class="sidetoc" >
+
+
+<div class="sidetoctitle" >
+
+<p>
+<span class="sidetocthetitle" >MAP555 : Signal Processing</span>
+</p>
+
+<p>
+Contents
+</p>
+</div>
+
+
+<div class="sidetoccontents" >
+
+<p>
+<a href="index.html" class="linkhome" >
+Home</a>
+</p>
+
+<p>
+<a href="node-1.html#autosec-5" class="tocchapter" >
+<span class="sectionnumber" >1</span>&#x2003;Introduction</a>
+</p>
+
+
+<p>
+<a href="node-1.html#autosec-6" class="tocsection" >
+<span class="sectionnumber" >1.1</span>&#x2003;Signal processing</a>
+</p>
+
+
+<p>
+<a href="node-2.html#autosec-8" class="tocsection" >
+<span class="sectionnumber" >1.2</span>&#x2003;The reign of digital</a>
+</p>
+
+
+<p>
+<a href="node-3.html#autosec-10" class="tocsection" >
+<span class="sectionnumber" >1.3</span>&#x2003;Signals and definitions</a>
+</p>
+
+
+<p>
+<a href="node-4.html#autosec-12" class="tocchapter" >
+<span class="sectionnumber" >2</span>&#x2003;Fourier analysis and analog filtering</a>
+</p>
+
+
+<p>
+<a href="node-4.html#autosec-13" class="tocsection" >
+<span class="sectionnumber" >2.1</span>&#x2003;Fourier transform</a>
+</p>
+
+
+<p>
+<a href="node-5.html#autosec-15" class="tocsection" >
+<span class="sectionnumber" >2.2</span>&#x2003;Frequency response and filtering</a>
+</p>
+
+
+<p>
+<a href="node-6.html#autosec-17" class="tocsection" >
+<span class="sectionnumber" >2.3</span>&#x2003;Applications of analog signal processing</a>
+</p>
+
+
+<p>
+<a href="node-7.html#autosec-19" class="tocchapter" >
+<span class="sectionnumber" >3</span>&#x2003;Digital signal processing</a>
+</p>
+
+
+<p>
+<a href="node-8.html#autosec-21" class="tocchapter" >
+<span class="sectionnumber" >4</span>&#x2003;Signal representations</a>
+</p>
+
+
+</div>
+
+</nav>
+
+</div>
+
+
+<div class="bodycontainer" >
+
+
+<section class="textbody" >
+
+<h1>MAP555 : Signal Processing</h1>
+
+<!--MathJax customizations:-->
+
+
+<div class="hidden" >
+
+\(\newcommand \ensuremath [1]{#1}\)
+
+\(\newcommand \footnote [2][]{\text {( Footnote #1 )}}\)
+
+\(\newcommand \footnotemark [1][]{\text {( Footnote #1 )}}\)
+
+\(\newcommand {\LWRframebox }[2][]{\fbox {#2}} \newcommand {\framebox }[1][]{\LWRframebox } \)
+
+\(\newcommand {\setlength }[2]{}\)
+
+\(\newcommand {\addtolength }[2]{}\)
+
+\(\newcommand {\setcounter }[2]{}\)
+
+\(\newcommand {\addtocounter }[2]{}\)
+
+\(\newcommand {\cline }[1]{}\)
+
+\(\newcommand {\directlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\luatexdirectlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\intertext }[1]{\\ \text {#1}\notag \\}\)
+
+</div>
+
+<p>
+<h3 id="autosec-21"><span class="sectionnumber" >4&#x2003;</span>Signal representations</h3>
+<a id="poly-autopage-21"></a>
+
+
+</section>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>
+<p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /> Rémi Flamary</p>
+</p>
+
+</footer>
+
+
+<nav class="botnavigation" ><a href="index.html" class="linkhome" >
+Home</a></nav>
+
+</body>
+</html>
