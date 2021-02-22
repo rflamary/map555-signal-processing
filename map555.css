@@ -9,10 +9,35 @@ div.sidetoccontainer{
    width: 400px;
    /* bottom: 0; */
    /* font-size: 90%; */
+   margin: 1pt 1px 1ex 1pt ;
    display: none;		/**/
    line-height: 1.0 ;
    background: #e6e6e6;
+   border-radius: 0px 0px 10px 0px ;
 }
+
+a.tocbook {display: inline-block ; margin-left: 0em ;
+    font-weight: bold ; margin-top: 1ex ; margin-bottom: 1ex ; }
+a.tocpart {display: inline-block ; margin-left: 0em ;
+    font-weight: bold ;}
+a.tocchapter {display: inline-block ; margin-left: 0em ;
+    font-weight: bold ;}
+a.tocsection {display: inline-block ; margin-left: 2em ;
+    text-indent: -.5em ; font-weight: normal; ; }
+a.tocsubsection {display: inline-block ; margin-left: 2em ;
+    text-indent: -.5em ; }
+a.tocsubsubsection {display: inline-block ; margin-left: 3em ;
+    text-indent: -.5em ; }
+a.tocparagraph {display: inline-block ; margin-left: 4em ;
+    text-indent: -.5em ; }
+a.tocsubparagraph {display: inline-block ; margin-left: 5em ;
+    text-indent: -.5em ; }
+a.tocfigure {margin-left: 0em}
+a.tocsubfigure {margin-left: 2em}
+a.toctable {margin-left: 0em}
+a.tocsubtable {margin-left: 2em}
+a.toctheorem {margin-left: 0em}
+a.toclstlisting {margin-left: 0em}
 
 nav.sidetoc p {
     line-height: 1.1;
@@ -80,6 +105,7 @@ a.topnavlink{
     float: right;
     padding-left: 0ex;
     padding-right: 3ex;
+    font-size: 1.0em;
 }
 
 a.topnavcontents{
