@@ -54,11 +54,16 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /> Rémi Flamary</p
 \renewcommand{\ptifont}{\sffamily\Huge\bfseries}
 
 \author{Rémi Flamary}
+
  
 \begin{document} 
 
-\title{MAP555 : Signal Processing}
+\title{MAP555 : Signal Processing \thanks{\textbf{Warning} : This document is currently being written and should be considered unfinished and full of mistakes and typos. It shoud not be used yet as a pedagogical support for a course.}}
+
+
 \maketitle
+
+
 
 \warpHTMLonly{ This document contains lecture notes from the Course MAP555 :
 Signal Processing from the Applied Mathematics department of
@@ -77,29 +82,34 @@ The document is also in PDF format \href{poly.pdf}{here}
 \chapter{Introduction}
 
 \section{Signal processing}
-\label{sec:}
+\label{sec:sigpro-intro}
+
+See Chap \ref{chap:fourier-analog} for intro to Fourier
 
 \section{Definitions and signal properties}
 
 \section{Bibliographical notes}
 
+\cite{haykin2007signals,oppenheim1997signals}
 
 \chapter{Fourier analysis and analog filtering}
+\label{chap:fourier-analog}
 
 
-\label{sec:}
 %\lipsum[2-4]
 \section{Fourier transform}
-\label{sec:}
+\label{sec:fourier-transform}
 %\lipsum[2-4]
 \section{Frequency response and filtering}
-\label{sec:}
+\label{sec:freq-response}
 %\lipsum[2-4]
 \section{Applications of analog signal processing}
-\label{sec:}
+\label{sec:appli-ft}
 %\lipsum[2-4]
 
 \chapter{Digital signal processing}
+\label{chap:dsp}
+
 
 \section{Sampling and Analog/Digital conversion}
 \label{sec:}
@@ -139,5 +149,11 @@ The document is also in PDF format \href{poly.pdf}{here}
 
 \section{Machine learning for signal processing}
 \label{sec:}
+
+
+\ForceHTMLTOC 
+\ForceHTMLPage
+\bibliographystyle{apalike}
+\bibliography{biblio}
 
 \end{document}
