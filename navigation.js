@@ -126,6 +126,6 @@ var maybeOpenSideNav = function(){
 window.onload = function(){
     highlightCurrentSection(getNodeNum());
     addNavLinks(getNodeNum());
-    maybeOpenSideNav()
-
+    maybeOpenSideNav();
+	closeSideNav();
 }
