@@ -32,7 +32,7 @@ jobs:
     - name: Build the html book
       run: |
         lwarpmk html
-    - name: post process the html
+    - name: Post-process the html
       run: |
         python post_process.py        
     # Push the book's HTML to github-pages
