@@ -60,6 +60,20 @@ def extract_biblio(fname):
             lst_bib.extend(prog.findall(line))
     return lst_bib
 
+def add_link_scholar(fname):
+    
+    with open(fname,'r') as reader:
+        new=[]
+        for line in reader.readlines():
+            if line.startswith('['):
+                txt=line.split(']&#x2003; ')[1]
+                txt=txt.replace('<i>','')
+                txt=txt.replace('</i>','')
+                line=line+' <a href="https://scholar.google.fr/scholar?q={}">[Google Scholar]</a>.'.format(txt)
+            new.append(line)
+
+    with open(fname,'w') as reader:
+        reader.writelines(new)
 
 
 
@@ -89,6 +103,7 @@ def main():
     print(lst_bibnames)
     
     file_replace_list(biblio_file,lst_bibnames,lst_bibdiv)
+    add_link_scholar(biblio_file)
     
     for f in lst_nodes:
         if not f==biblio_file:
