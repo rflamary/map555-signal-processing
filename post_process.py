@@ -5,7 +5,7 @@ import re
 
 title_remove='<h1>MAP555 : Signal Processing </h1>'
 link_bib='<a href="{bibfile}#r{i}">{bibtxt}</a>'
-div_bib='<a name="r{i}">{txt}</a>'
+div_bib='<a id="r{i}"></a>{txt}'
 
 
 def file_replace(fname,str1,str2):

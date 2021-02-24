@@ -1,24 +1,43 @@
 \contentsline {chapter}{\numberline {1}{\ignorespaces Introduction\relax }}{6}
 \contentsline {section}{\numberline {1.1}{\ignorespaces Signal processing\relax }}{7}
-\contentsline {section}{\numberline {1.2}{\ignorespaces Definitions and signal properties\relax }}{9}
-\contentsline {section}{\numberline {1.3}{\ignorespaces Bibliographical notes\relax }}{11}
-\contentsline {chapter}{\numberline {2}{\ignorespaces Fourier analysis and analog filtering\relax }}{13}
-\contentsline {section}{\numberline {2.1}{\ignorespaces Fourier transform\relax }}{14}
-\contentsline {section}{\numberline {2.2}{\ignorespaces Frequency response and filtering\relax }}{16}
-\contentsline {section}{\numberline {2.3}{\ignorespaces Applications of analog signal processing\relax }}{18}
-\contentsline {chapter}{\numberline {3}{\ignorespaces Digital signal processing\relax }}{20}
-\contentsline {section}{\numberline {3.1}{\ignorespaces Sampling and Analog/Digital conversion\relax }}{21}
-\contentsline {section}{\numberline {3.2}{\ignorespaces Digital filtering\relax }}{23}
-\contentsline {section}{\numberline {3.3}{\ignorespaces Finite signals\relax }}{25}
-\contentsline {section}{\numberline {3.4}{\ignorespaces Applications of DSP\relax }}{27}
-\contentsline {chapter}{\numberline {4}{\ignorespaces Random signals\relax }}{29}
-\contentsline {section}{\numberline {4.1}{\ignorespaces Random Signals and Correlations\relax }}{30}
-\contentsline {section}{\numberline {4.2}{\ignorespaces Frequency representation of random signals\relax }}{32}
-\contentsline {section}{\numberline {4.3}{\ignorespaces AR modeling and linear prediction\relax }}{34}
-\contentsline {chapter}{\numberline {5}{\ignorespaces Signal representations\relax }}{36}
-\contentsline {section}{\numberline {5.1}{\ignorespaces Short Time Fourier Transform\relax }}{37}
-\contentsline {section}{\numberline {5.2}{\ignorespaces Common signal representations\relax }}{39}
-\contentsline {section}{\numberline {5.3}{\ignorespaces Source separation and dictionary learning\relax }}{41}
-\contentsline {section}{\numberline {5.4}{\ignorespaces Machine learning for signal processing\relax }}{43}
-\contentsline {chapter}{Bibliography}{45}
+\contentsline {paragraph}{Signal processing is everywhere}{8}
+\contentsline {paragraph}{Objective of this course}{9}
+\contentsline {paragraph}{Content of the document}{10}
+\contentsline {section}{\numberline {1.2}{\ignorespaces Bibliographical notes\relax }}{12}
+\contentsline {paragraph}{Signal processing}{13}
+\contentsline {paragraph}{Analog signal processing and Fourier Transform}{14}
+\contentsline {paragraph}{Digital signal processing}{15}
+\contentsline {paragraph}{Random signals, stochastic processes}{16}
+\contentsline {paragraph}{Signal representations}{17}
+\contentsline {section}{\numberline {1.3}{\ignorespaces About this document\relax }}{19}
+\contentsline {chapter}{\numberline {2}{\ignorespaces Signals and convolution\relax }}{21}
+\contentsline {section}{\numberline {2.1}{\ignorespaces Signals and properties\relax }}{22}
+\contentsline {subsection}{\numberline {2.1.1}{\ignorespaces Analog and digital signals\relax }}{23}
+\contentsline {paragraph}{Analog signal}{24}
+\contentsline {subsection}{\numberline {2.1.2}{\ignorespaces Properties of signals\relax }}{25}
+\contentsline {paragraph}{Causality}{26}
+\contentsline {paragraph}{Periodicity}{27}
+\contentsline {paragraph}{Signal in $L_p(S)$ space}{29}
+\contentsline {subsection}{\numberline {2.1.3}{\ignorespaces Common signals\relax }}{30}
+\contentsline {section}{\numberline {2.2}{\ignorespaces Convolution and filtering\relax }}{32}
+\contentsline {section}{\numberline {2.3}{\ignorespaces Fundamental signal processing problems\relax }}{34}
+\contentsline {chapter}{\numberline {3}{\ignorespaces Fourier analysis and analog filtering\relax }}{36}
+\contentsline {section}{\numberline {3.1}{\ignorespaces Fourier transform\relax }}{37}
+\contentsline {section}{\numberline {3.2}{\ignorespaces Frequency response and filtering\relax }}{39}
+\contentsline {section}{\numberline {3.3}{\ignorespaces Applications of analog signal processing\relax }}{41}
+\contentsline {chapter}{\numberline {4}{\ignorespaces Digital signal processing\relax }}{43}
+\contentsline {section}{\numberline {4.1}{\ignorespaces Sampling and Analog/Digital conversion\relax }}{44}
+\contentsline {section}{\numberline {4.2}{\ignorespaces Digital filtering and transfer function\relax }}{46}
+\contentsline {section}{\numberline {4.3}{\ignorespaces Finite signals and Fast Fourier Transform\relax }}{48}
+\contentsline {section}{\numberline {4.4}{\ignorespaces Applications of DSP\relax }}{50}
+\contentsline {chapter}{\numberline {5}{\ignorespaces Random signals\relax }}{52}
+\contentsline {section}{\numberline {5.1}{\ignorespaces Random Signals and Correlations\relax }}{53}
+\contentsline {section}{\numberline {5.2}{\ignorespaces Frequency representation of random signals\relax }}{55}
+\contentsline {section}{\numberline {5.3}{\ignorespaces AR modeling and linear prediction\relax }}{57}
+\contentsline {chapter}{\numberline {6}{\ignorespaces Signal representations\relax }}{59}
+\contentsline {section}{\numberline {6.1}{\ignorespaces Short Time Fourier Transform\relax }}{60}
+\contentsline {section}{\numberline {6.2}{\ignorespaces Common signal representations\relax }}{62}
+\contentsline {section}{\numberline {6.3}{\ignorespaces Source separation and dictionary learning\relax }}{64}
+\contentsline {section}{\numberline {6.4}{\ignorespaces Machine learning for signal processing\relax }}{66}
+\contentsline {chapter}{Bibliography}{68}
 

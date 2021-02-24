@@ -20,7 +20,7 @@
 \MathJaxFilename{map555_mathjax.txt}
 \HTMLPageBottom{<p><img alt="Creative
 Commons License" style="border-width:0"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /> Rémi Flamary</p>}
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /> Rémi Flamary, 2021</p>}
 
 
 \renewcommand{\theHTMLTitleSection}{\theHTMLTitle}
@@ -30,11 +30,14 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /> Rémi Flamary</p
 %\usepackage{natbib}
 %\usepackage[french]{babel}
 \usepackage[dvipsnames]{xcolor}
-\usepackage[pdftex,linktocpage,pdfstartview=FitH,colorlinks=true,linkcolor=blue,citecolor=magenta]{hyperref}
+\usepackage{graphicx}
+\usepackage[pdftex,linktocpage,pdfstartview=FitH,colorlinks=true,linkcolor=blue,citecolor=teal]{hyperref}
 %\usepackage[pagebackref,hyperindex=true]{hyperref}
 \usepackage{lipsum} 
 % minitoc
 \usepackage{minitoc}
+
+
 \setcounter{minitocdepth}{2}
 \mtcindent=10pt
 
@@ -54,8 +57,10 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /> Rémi Flamary</p
 \renewcommand{\mtifont}{\sffamily\large\bfseries}
 \renewcommand{\ptifont}{\sffamily\Huge\bfseries}
 
-\author{Rémi Flamary}
+\input{notations.tex}
+\input{notations_lwarp.tex}
 
+\author{Rémi Flamary}
  
 \begin{document} 
 
@@ -82,16 +87,12 @@ The document is also in PDF format \href{poly.pdf}{here}
 %\part{Analog signal processing}
 \chapter{Introduction}
 
-\section{Signal processing}
-\label{sec:sigpro-intro}
+\input{1_introduction}
 
-See Chap \ref{chap:fourier-analog} for intro to Fourier
+\chapter{Signals and convolution}
+\label{chap:fourier-analog}
 
-\section{Definitions and signal properties}
-
-\section{Bibliographical notes}
-
-\cite{haykin2007signals,oppenheim1997signals}
+\input{2_signal_convolution}
 
 \chapter{Fourier analysis and analog filtering}
 \label{chap:fourier-analog}
@@ -113,48 +114,56 @@ See Chap \ref{chap:fourier-analog} for intro to Fourier
 
 
 \section{Sampling and Analog/Digital conversion}
-\label{sec:}
+\label{sec:sampling}
 
-\section{Digital filtering}
-\label{sec:}
+\section{Digital filtering and transfer function}
+\label{sec:digital_filtering}
 
-\section{Finite signals}
-\label{sec:}
+\section{Finite signals and Fast Fourier Transform}
+\label{sec:finite_signals_fft}
 
 \section{Applications of DSP}
-\label{sec:}
-
+\label{sec:applis_dsp}
 
 \chapter{Random signals}
+\label{chap:random}
+
 
 \section{Random Signals and Correlations}
-\label{sec:}
+\label{sec:rand_sig_corr}
 
 \section{Frequency representation of random signals}
-\label{sec:}
+\label{sec:freq_resp_random}
 
 \section{AR modeling and linear prediction}
-\label{sec:}
+\label{sec:ar_linear}
 
 \chapter{Signal representations}
+\label{chap:sig_representations}
 
 \section{Short Time Fourier Transform}
-\label{sec:}
+\label{sec:stft}
 
 \section{Common signal representations}
-\label{sec:}
+\label{sec:comon_signal_rep}
 
 \section{Source separation and dictionary learning}
-\label{sec:}
+\label{sec:dl}
 
 
 \section{Machine learning for signal processing}
-\label{sec:}
+\label{sec:mlsp}
 
 
-\ForceHTMLTOC 
+%\ForceHTMLTOC 
 \ForceHTMLPage
+
 \bibliographystyle{apalike}
 \bibliography{biblio}
+\addcontentsline{toc}{chapter}{Bibliography}
+% \begin{warpprint}
+%     \addcontentsline{toc}{chapter}{Bibliography}
+% \end{warpprint}
+
 
 \end{document}

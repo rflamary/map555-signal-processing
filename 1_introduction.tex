@@ -1,0 +1,111 @@
+
+In this chapter we will introduce signal processing and discuss briefly the
+numerous fundamental problems of signal processing. 
+
+\section{Signal processing}
+\label{sec:sigpro-intro}
+
+
+\paragraph{Signal processing is everywhere}
+Signal processing is a field that aim at modeling signals and providing automatic
+processing of those signals. 
+It has been heavily researched for several decades
+and signal processing methods are central part of numerous technologies in
+telecommunications, multi-media processing, compression and storage. 
+In recent
+years, tremendous results have been obtained by using modern machine learning
+and artificial intelligence techniques.
+
+\paragraph{Objective of this course} The objective of this course is to provide
+an introduction to the very large field of signal processing. 
+One fascinating
+aspect of signal processing is that it is at the crossroad between Physics (to
+generate the signals), Electronics (to measure the signals), Mathematics (to
+model the signals) and Computer Science (to process the signals). This
+multi-disciplinary aspect has made signal processing 
+
+We plan on
+introducing in this documents both the mathematical models, the numerical
+algorithms used for their processing and several examples of real life
+applications. The implementation of the signal processing methods in Python will
+also be discussed with example code and existing
+toolboxes. Note that most of the methods are introduced very briefly, but we
+will always provide detailed references for a more in-depth study.
+
+
+\paragraph{Content of the document} The course begins with a short introduction
+of signal processing containing a few definitions and problems formulations
+followed by bibliographical notes. Chapter \ref{chap:fourier-analog} provides 
+a presentation of Fourier analysis and analog filtering
+with some applicative examples such as modulation and Fourier optics in
+astronomy. Chapter \ref{chap:dsp} introduces signal sampling and digital signal filtering that has
+become the de-facto standard in practical applications. It also presents the very
+important Fast Fourier Transform (FFT) algorithm and discuss some examples of
+filtering in image processing. Chapter \ref{chap:random} discuss the random/stochastic aspects of signals and their optimal linear
+filtering when modeled as as stochastic processes. The
+modeling of speech is taken as an example for the study of
+auto-regressive models. Chapter \ref{chap:sig_representations} briefly
+introduces  several
+signal representations commonly used such as the Discrete Cosine Transform
+(DCT), and wavelet transforms used in
+JPEG encoding and image reconstruction. The short time Fourier transform will also be introduced to model
+non-stationary signals. Finally some recent approaches based on machine learning
+such as dictionary learning and deep learning signal reconstruction will be
+presented.
+
+
+\section{Bibliographical notes}
+
+This document was strongly inspired by a number of outstanding references books that
+have been published over the years. In this section we discuss a few of those
+strongly recommended references.  Suggestions to the author are
+welcome to provide a curated list of "awesome" references for signal processing
+similar to the lists available on GitHub. 
+
+\paragraph{Signal processing}
+
+\begin{itemize}
+    
+    \item Signals and Systems \cite{haykin2007signals}.
+    \item Signals and Systems \cite{oppenheim1997signals}.
+    \item Signal Analysis \cite{papoulis1977signal}.
+    \item[] \hspace{1cm}
+    
+    \item Polycopiés from Stéphane Mallat and Éric Moulines \cite{mallat2015traitement}.
+    \item Théorie du signal \cite{jutten2018theorie}.   
+
+\end{itemize}
+
+\paragraph{Analog signal processing and Fourier Transform}
+
+\begin{itemize}
+    \item Fourier Analysis and its applications \cite{vretblad2003fourier}
+    \item Distributions et Transformation de Fourier \cite{roddier1985distributions}
+  \end{itemize}
+
+  \paragraph{Digital signal processing}
+
+  \begin{itemize}
+    \item   \url{https://www.numerical-tours.com/}
+    
+    \item  Discrete-time signal processing \cite{oppenheim1999discrete}.
+  \end{itemize}
+
+\paragraph{Random signals, stochastic processes}
+
+\begin{itemize}
+    \item Random variables and stochastic processes \cite{papoulis1965random}.
+    \item \cite{ross1996stochastic}
+    \item \cite{kay1993fundamentals}
+\end{itemize}
+
+
+
+\paragraph{Signal representations}
+\begin{itemize}
+    \item A Wavelet tour of signal processing \cite{mallat1999wavelet}.
+    \item Wavelets and sub-band coding \cite{vetterli1995wavelets}.
+\end{itemize}
+
+\section{About this document}
+
