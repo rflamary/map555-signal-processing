@@ -36,7 +36,10 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /> Rémi Flamary, 2
 \usepackage{lipsum} 
 % minitoc
 \usepackage{minitoc}
+\usepackage{imakeidx}
 
+
+\makeindex
 
 \setcounter{minitocdepth}{2}
 \mtcindent=10pt
@@ -61,7 +64,7 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /> Rémi Flamary, 2
 \input{notations_lwarp.tex}
 
 \author{Rémi Flamary}
- 
+
 \begin{document} 
 
 \title{MAP555 : Signal Processing \thanks{\textbf{Warning} : This document is currently being written and should be considered unfinished and full of mistakes and typos. It should not be used yet as a pedagogical support for a course.}}
@@ -166,4 +169,7 @@ The document is also in PDF format \href{poly.pdf}{here}
 % \end{warpprint}
 
 
+\ForceHTMLPage
+\printindex
+\addcontentsline{toc}{chapter}{Index}
 \end{document}

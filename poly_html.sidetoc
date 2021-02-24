@@ -17,7 +17,7 @@
 \contentsline {subsection}{\numberline {2.1.2}{\ignorespaces Properties of signals\relax }}{25}
 \contentsline {paragraph}{Causality}{26}
 \contentsline {paragraph}{Periodicity}{27}
-\contentsline {paragraph}{Signal in $L_p(S)$ space}{29}
+\contentsline {paragraph}{Signal in $L_p$ space}{29}
 \contentsline {subsection}{\numberline {2.1.3}{\ignorespaces Common signals\relax }}{30}
 \contentsline {section}{\numberline {2.2}{\ignorespaces Convolution and filtering\relax }}{32}
 \contentsline {section}{\numberline {2.3}{\ignorespaces Fundamental signal processing problems\relax }}{34}
@@ -40,4 +40,5 @@
 \contentsline {section}{\numberline {6.3}{\ignorespaces Source separation and dictionary learning\relax }}{64}
 \contentsline {section}{\numberline {6.4}{\ignorespaces Machine learning for signal processing\relax }}{66}
 \contentsline {chapter}{Bibliography}{68}
+\contentsline {chapter}{Index}{71}
 
