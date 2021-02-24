@@ -22,11 +22,11 @@ a.tocpart {display: inline-block ; margin-left: 0em ;
     font-weight: bold ;}
 a.tocchapter {display: inline-block ; margin-left: 0em ;
     font-weight: bold ;}
-a.tocsection {display: inline-block ; margin-left: 2em ;
-    text-indent: -.5em ; font-weight: normal; ; }
-a.tocsubsection {display: inline-block ; margin-left: 2em ;
-    text-indent: -.5em ; }
-a.tocsubsubsection {display: inline-block ; margin-left: 3em ;
+a.tocsection {display: inline-block ; margin-left: 1.5em ;
+    text-indent: -.5em ; font-weight: normal;  font-size: 90%; }
+a.tocsubsection {display: inline-block ; margin-left: 3em ;
+    text-indent: -.5em ; font-size: 80% }
+a.tocsubsubsection {display: inline-block ; margin-left: 4em ;
     text-indent: -.5em ; }
 a.tocparagraph {display: inline-block ; margin-left: 4em ;
     text-indent: -.5em ; }
@@ -63,13 +63,19 @@ body {
     line-height: 1.2 ;
 }
 
+span.paragraph {
+    font-size: 1.3em;
+    font-variant: normal;
+    margin-right: 1em;
+}
+
 div.bodycontainer{
     float: right;
     width: 100%;
 }
 
 section.textbody{
-    margin: 3em 16% 0ex 1%;
+    margin: 5em 1em 1em;
 }
 
 blockquote p{

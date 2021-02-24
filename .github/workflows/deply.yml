@@ -29,6 +29,9 @@ jobs:
     - name: Build the pdf book
       run: |
         latexmk -pdf poly.tex
+    - name: Convert pdf figures to svg 
+      run: |
+        lwarpmk pdftosvg imgs/*/*.pdf
     - name: Build the html book
       run: |
         lwarpmk html
