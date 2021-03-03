@@ -16,11 +16,11 @@ def main():
                 txt.append(line)
             elif line.startswith(r'\def'):
                 cmd=line.split('{')[0].replace(r'\def','')
-                cmd_def=line[line.find('{'):-1]
+                cmd_def=line[line.find('{'):].replace('\n','')
                 txt.append("\\CustomizeMathJax{{\\newcommand{{{}}}{{{}}}}}\n".format(cmd,cmd_def))
                 print(txt[-1])
             elif line.startswith(r'\newcommand'):
-                txt.append("\\CustomizeMathJax{{{}}}".format(line[:-1]))
+                txt.append("\\CustomizeMathJax{{{}}}".format(line.replace('\n','')))
             else :
                 print('Warning line {} not processed : {}'.format(i,line))
     txt.append("\n\end{warpHTML}\n")

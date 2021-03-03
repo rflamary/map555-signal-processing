@@ -37,6 +37,7 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /> Rémi Flamary, 2
 % minitoc
 \usepackage{minitoc}
 \usepackage{imakeidx}
+%\usepackage{media9}
 
 
 \makeindex
@@ -59,6 +60,9 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /> Rémi Flamary, 2
 \renewcommand{\mtcSSSfont}{\sffamily\small}
 \renewcommand{\mtifont}{\sffamily\large\bfseries}
 \renewcommand{\ptifont}{\sffamily\Huge\bfseries}
+
+% replace the block from beamer
+\newenvironment{block}[1]{\paragraph{#1}}{}
 
 \input{notations.tex}
 \input{notations_lwarp.tex}
