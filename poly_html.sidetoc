@@ -30,32 +30,38 @@
 \contentsline {paragraph}{Main properties of Dirac delta}{41}
 \contentsline {paragraph}{ Dirac delta definition}{42}
 \contentsline {paragraph}{Delta dirac in practice}{43}
-\contentsline {section}{\numberline {2.2}{\ignorespaces Convolution and filtering\relax }}{45}
-\contentsline {paragraph}{Convolution}{46}
-\contentsline {paragraph}{Example of convolution}{47}
-\contentsline {section}{\numberline {2.3}{\ignorespaces Fundamental signal processing problems\relax }}{50}
-\contentsline {paragraph}{Filtering}{51}
-\contentsline {paragraph}{Deconvolution}{52}
-\contentsline {paragraph}{Unmixing/regression}{53}
-\contentsline {paragraph}{Blind source separation}{54}
-\contentsline {chapter}{\numberline {3}{\ignorespaces Fourier analysis and analog filtering\relax }}{56}
-\contentsline {section}{\numberline {3.1}{\ignorespaces Fourier transform\relax }}{57}
-\contentsline {section}{\numberline {3.2}{\ignorespaces Frequency response and filtering\relax }}{59}
-\contentsline {section}{\numberline {3.3}{\ignorespaces Applications of analog signal processing\relax }}{61}
-\contentsline {chapter}{\numberline {4}{\ignorespaces Digital signal processing\relax }}{63}
-\contentsline {section}{\numberline {4.1}{\ignorespaces Sampling and Analog/Digital conversion\relax }}{64}
-\contentsline {section}{\numberline {4.2}{\ignorespaces Digital filtering and transfer function\relax }}{66}
-\contentsline {section}{\numberline {4.3}{\ignorespaces Finite signals and Fast Fourier Transform\relax }}{68}
-\contentsline {section}{\numberline {4.4}{\ignorespaces Applications of DSP\relax }}{70}
-\contentsline {chapter}{\numberline {5}{\ignorespaces Random signals\relax }}{72}
-\contentsline {section}{\numberline {5.1}{\ignorespaces Random Signals and Correlations\relax }}{73}
-\contentsline {section}{\numberline {5.2}{\ignorespaces Frequency representation of random signals\relax }}{75}
-\contentsline {section}{\numberline {5.3}{\ignorespaces AR modeling and linear prediction\relax }}{77}
-\contentsline {chapter}{\numberline {6}{\ignorespaces Signal representations\relax }}{79}
-\contentsline {section}{\numberline {6.1}{\ignorespaces Short Time Fourier Transform\relax }}{80}
-\contentsline {section}{\numberline {6.2}{\ignorespaces Common signal representations\relax }}{82}
-\contentsline {section}{\numberline {6.3}{\ignorespaces Source separation and dictionary learning\relax }}{84}
-\contentsline {section}{\numberline {6.4}{\ignorespaces Machine learning for signal processing\relax }}{86}
-\contentsline {chapter}{Bibliography}{88}
-\contentsline {chapter}{Index}{91}
+\contentsline {subsection}{\numberline {2.1.3}{\ignorespaces Discrete time and digital signals\relax }}{44}
+\contentsline {section}{\numberline {2.2}{\ignorespaces Convolution and filtering\relax }}{46}
+\contentsline {subsection}{\numberline {2.2.1}{\ignorespaces Convolution and properties\relax }}{47}
+\contentsline {paragraph}{Convolution}{48}
+\contentsline {paragraph}{Example of convolution}{49}
+\contentsline {subsection}{\numberline {2.2.2}{\ignorespaces Linear Time Invariant (LTI) systems\relax }}{51}
+\contentsline {section}{\numberline {2.3}{\ignorespaces Discrete time and digital signals\relax }}{53}
+\contentsline {subsection}{\numberline {2.3.1}{\ignorespaces Discrete time\relax }}{54}
+\contentsline {subsection}{\numberline {2.3.2}{\ignorespaces Finite signals\relax }}{55}
+\contentsline {subsection}{\numberline {2.3.3}{\ignorespaces Quantization and storage\relax }}{56}
+\contentsline {section}{\numberline {2.4}{\ignorespaces Fundamental signal processing problems\relax }}{58}
+\contentsline {subsection}{\numberline {2.4.1}{\ignorespaces Filtering\relax }}{59}
+\contentsline {subsection}{\numberline {2.4.2}{\ignorespaces Deconvolution, unmixing and regression\relax }}{60}
+\contentsline {subsection}{\numberline {2.4.3}{\ignorespaces Blind source separation and deconvolution\relax }}{61}
+\contentsline {chapter}{\numberline {3}{\ignorespaces Fourier analysis and analog filtering\relax }}{63}
+\contentsline {section}{\numberline {3.1}{\ignorespaces Fourier transform\relax }}{64}
+\contentsline {section}{\numberline {3.2}{\ignorespaces Frequency response and filtering\relax }}{66}
+\contentsline {section}{\numberline {3.3}{\ignorespaces Applications of analog signal processing\relax }}{68}
+\contentsline {chapter}{\numberline {4}{\ignorespaces Digital signal processing\relax }}{70}
+\contentsline {section}{\numberline {4.1}{\ignorespaces Sampling and Analog/Digital conversion\relax }}{71}
+\contentsline {section}{\numberline {4.2}{\ignorespaces Digital filtering and transfer function\relax }}{73}
+\contentsline {section}{\numberline {4.3}{\ignorespaces Finite signals and Fast Fourier Transform\relax }}{75}
+\contentsline {section}{\numberline {4.4}{\ignorespaces Applications of DSP\relax }}{77}
+\contentsline {chapter}{\numberline {5}{\ignorespaces Random signals\relax }}{79}
+\contentsline {section}{\numberline {5.1}{\ignorespaces Random Signals and Correlations\relax }}{80}
+\contentsline {section}{\numberline {5.2}{\ignorespaces Frequency representation of random signals\relax }}{82}
+\contentsline {section}{\numberline {5.3}{\ignorespaces AR modeling and linear prediction\relax }}{84}
+\contentsline {chapter}{\numberline {6}{\ignorespaces Signal representations\relax }}{86}
+\contentsline {section}{\numberline {6.1}{\ignorespaces Short Time Fourier Transform\relax }}{87}
+\contentsline {section}{\numberline {6.2}{\ignorespaces Common signal representations\relax }}{89}
+\contentsline {section}{\numberline {6.3}{\ignorespaces Source separation and dictionary learning\relax }}{91}
+\contentsline {section}{\numberline {6.4}{\ignorespaces Machine learning for signal processing\relax }}{93}
+\contentsline {chapter}{Bibliography}{95}
+\contentsline {chapter}{Index}{98}
 
