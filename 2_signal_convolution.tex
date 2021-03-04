@@ -336,21 +336,276 @@ Also known as the step function.
 \end{itemize}
 
 \subsection{Linear Time Invariant (LTI) systems}
-\label{sec:lti_systeùs}
+\label{sec:lti_systems}
 
+
+
+\begin{block}{Linear Time Invariant (LTI) system}\vspace{-1mm}
+  \begin{itemize}
+  \item A system describes a relation between an input $x(t)$ and an output $y(t)$.
+  \item Properties of LTI systems:\vspace{-1mm}
+    \begin{itemize}
+    \item Linearity \vspace{-3mm}
+      $$\quad x_1(t)+ax_2(t)\rightarrow y_1(t)+ay_2(t)$$
+    \item Time invariance\vspace{-3mm}
+$$x(t-\tau)\rightarrow y(t-\tau)$$
+    \end{itemize}
+    \item A LTI system can most of the time be expressed as a convolution of the form:
+    $$y(t)=x(t)\star h(t)$$
+    where $h(t)$ is called the impulse response (the response of the system to an input $x(t)=\delta(t)$)
+  \end{itemize}
+\end{block}
+
+
+\begin{exampleblock}{Examples}
+\begin{itemize}
+\item Passive electronic systems (resistor/capacitor/inductor) .
+\item Newtonian mechanics, Fluid mechanics, Fourier Optics.
+\end{itemize}
+\end{exampleblock}
+
+
+
+\begin{block}{Ordinary Differential Equation (ODE)}
+  The system is defined by a linear equation of the form:
+  \begin{equation}
+    \label{eq:edo}
+    a_0y(t)+a_1\frac{dy(t)}{dt}+\dots+a_n\frac{d^ny(t)}{dt^n}=
+    b_0x(t)+b_1\frac{dx(t)}{dt} +\dots+b_m\frac{d^mx(t)}{dt^m}
+  \end{equation}
+  
+  \begin{itemize}
+  \item ODE based system with linear relations are an important class of LTI systems.
+  \item Also called homogeneous linear differential equation.
+  %\item $\max(m,n)$ est l'ordre du système.
+  %\item Également appelées équations différentielles linéaires à coefficients
+  %constants.
+  \item $n$ is the number of derivatives for $y(t)$ and $m$ for $x(t)$.
+  \item $\max(m,n)$ is the order of the system.
+  \item The output of the system can be computed from the input by solving Eq.
+    \eqref{eq:edo}.
+    \item Linearity and time invariance are obvious from equation.
+  \end{itemize}
+  
+  \end{block}
 
 
 \section{Discrete time and digital signals}
-\label{sec:def_disrete_signal}
+\label{sec:def_discrete_signal}
 
 \subsection{Discrete time}
+
+  
+\begin{block}{Notations}
+  \begin{itemize}
+      \item $x(t)$ with $t\in\R$ is the analog signal.
+      \item $x_T(t)$ with $t\in\R$ is the sampled signal of period (T) but still continuous time:
+      $$  x_T(t)=\sum_{n=-\infty}^\infty x(nT)\delta(t-nT) $$
+      \item $x[n]$ with $n\in\mathbb{Z}$ is the discrete signal sampled with period $T$ such that:
+      $$  x[n]= x(nT) $$
+      \item Obviously one can recover $x_T(t)$ from $x[n]$ with
+      $$  x_T(t)=\sum_{n=-\infty}^\infty x[n]\delta(t-nT) $$
+      \item In order to simplify notations we will suppose $T=1$ in the following.
+      \item In this course we suppose that $|x[n]|$ is bounded.
+  \end{itemize}
+\end{block}
+
+
+\begin{center}
+  \includegraphics[width=.8\linewidth]{imgs/sig_conv/dirac_delta_discrete}
+\end{center}\vspace{-5mm}
+
+\begin{block}{Discrete dirac}
+  We note the discrete dirac $\delta[n]$ defined as\vspace{-2mm}
+  \begin{equation}
+      \delta[n]=
+      \begin{cases}
+          1& \text{for } n=0\\
+          0 & \text{else}
+        \end{cases}
+      \label{eq:discrete_dirac}
+  \end{equation}\vspace{-5mm}
+\end{block}
+
+\begin{block}{Discrete signal}
+  Any discrete signal $x[n]$ can be decomposed as a sum of translated discrete diracs:\vspace{-1mm}
+  \begin{equation}
+      x[n]=\sum_{k=-\infty}^\infty x[k]\delta[n-k]
+      \label{eq:discreet_signal_dirac}
+  \end{equation}\vspace{-2mm}
+
+  The discrete diracs are an orthogonal basis of $L_2(\mathbb{Z})$ of scalar product and corresponding norm  \vspace{-2mm}$$<x[n],h[n]>=\sum_{k=-\infty}^\infty x[k]h^*[k],\qquad \|x[n]\|^2=<x[n],x[n]>=\sum_{k=-\infty}^\infty |x[k]|^2.$$ 
+\end{block}
+
+
+\begin{block}{Convolution between discrete signals}
+  Let $x[n]$ and $h[n]$ two discrete signals. The convolution between them is expressed as:
+  \begin{equation}
+      x[n]\star h[n]= \sum_{k=-\infty}^\infty x[k]h[n-k]
+      \label{eq:discrete_convolution}
+  \end{equation}
+
+\end{block}
+
+\begin{block}{Digital filter properties}
+  Let the discrete system/operator/filter $L$ described by its impulse response $h[n]$.
+  \begin{itemize}
+      \item \textbf{Causality} $L$ is causal if $h[n]=0,\ \forall n\leq 0$. $L$ is causal if 
+   \begin{equation}
+          h[n]=h[n]\Gamma[n],\qquad\text{where}\qquad     \Gamma[n]=
+          \begin{cases}
+              1& \text{for } n\geq 0\\
+              0 & \text{else}
+            \end{cases}
+          \label{eq:causal_discrete}
+      \end{equation}
+      \item \textbf{Stability} A system is stable if the output of a bonded input is bounded. A necessary and sufficient condition is that
+      \begin{equation}
+          \sum_{n=-\infty}^\infty |h[n]|<\infty
+          \label{eq:stable_system}
+      \end{equation}
+      
+      
+  \end{itemize}
+  
+\end{block}
 
 \subsection{Finite signals}
 \label{sec:finite}
 
+\begin{center}
+  \includegraphics[width=.8\linewidth]{imgs/sig_conv/finite_discrete-crop.pdf}
+\end{center}
+
+\begin{block}{Finite discrete signals}
+  \begin{itemize}
+      \item Most of the theoretical results seen up to now correspond to signals $x[n]$ where $n\in\mathbb{Z}$.
+      \item In practice recordings are only done for a finite amount of time resulting to only $N$ samples. 
+      \item We defined $\tilde x[n]$ a finite signal of $N$ samples with $n\in \{0,\dots,N-1\}$.
+      \item We use in the following the periodization of $\bar x[n]$
+      $$ x[n] = \tilde x[n\mod N] $$
+      where $\mod$ is the modulo operator.
+  \end{itemize}
+\end{block}
+
+\begin{block}{Discrete convolution of finite signals}
+  The convolution between $\tilde x[n]$ and $\tilde h[n]$ both finite signals of $n$ samples can be expressed as:
+  \begin{equation}
+      \tilde y[n]=\tilde x[n]\star\tilde h[n] =  \sum_{p=-\infty}^{+\infty}
+      \tilde x[p] \tilde h[n-p] 
+      \label{eq:conv_finite}\vspace{-3mm}
+  \end{equation}
+  \begin{itemize}
+      \item It requires values for the signals outside of the sampling widow. 
+      \item One common approach consists in having $\tilde x[n]$ and $\tilde h[n]$ equal to $0$ outside the sampling interval. Other choices can be done (see next slides)
+ %     \item In this case only the center sample is exact.
+  \end{itemize}
+\end{block}
+
+\begin{block}{Circular convolution}
+  When using the periodic version of the signals the circular convolution can be computed on a unique period of size $N$:
+  \[
+      x \ostar h [n] 
+      = \sum_{p=0}^{N-1}
+      x[p] h[n-p] .
+      \] 
+The circular convolution is rarely appropriate in real life images due to border effects.
+ % Note that thanks to the 
+\end{block}
+
+\begin{block}{Vector representation and convolution matrix}\vspace{-2mm}
+  \begin{itemize}
+      \item Finite signal $x$ of $N$ samples can be represented as a vector $\x\in\mathbb{C}^N$.
+      \item The convolution operator is linear and can be expressed as:\vspace{-1mm}
+      $$ \y=\x\star\h= \C_\h \x $$
+      Where\vspace{-1mm} $\C_\h\in \mathcal{M}_\mathbb{C}(N,N)$ is a convolution matrix parametrized by vector $\h$.
+  \end{itemize} \vspace{-4mm}
+\end{block} %\vspace{-5mm}
+
+\begin{block}{Discrete convolution}
+  The convolution operator when the values outside the support are $0$ can be expressed as\vspace{-2mm}
+  $$ \hspace{-3mm}\C_\h\hspace{-.5mm} =\hspace{-.5mm}\begin{bmatrix}
+      h[0] & 0 & \cdots& 0\\
+      h[1] & h[0] & \cdots& 0\\
+      \vdots & \vdots & \ddots & \vdots\\
+      h[N\hspace{-.5mm}-\hspace{-.5mm}1] & h[N\hspace{-.5mm}-\hspace{-.5mm}2 ] & \dots&  h[0]\\
+      \vdots & \vdots & \ddots & \vdots\\
+      0 & 0 &\cdots & h[N\hspace{-.5mm}-\hspace{-.5mm}1] 
+  \end{bmatrix} $$
+  where $\C_\h\in \mathcal{M}_\mathbb{C}(2*N-1,N)$ is a Toeplitz matrix.
+\end{block}
+
+\begin{block}{Circular convolution}
+  The circular convolution operator can be expressed as
+  $$ \C_\h =\begin{bmatrix}
+      h[0] & h[N-1] & \cdots& h[1]\\
+      h[1] & h[0] & \cdots& h[2]\\
+      \vdots & \vdots & \ddots & \vdots\\
+      h[N-1] & h[N-2 ] & \dots&  h[0]\\
+  \end{bmatrix} $$
+  where $\C_\h\in \mathcal{M}_\mathbb{C}(N,N)$ is a circulant Toeplitz matrix.
+\end{block}
+
+\begin{center}
+  \includegraphics[width=.9\linewidth]{imgs/sig_conv/circ_conv_border.pdf}
+\end{center}
+
+\begin{itemize}
+  \item Convolution between diracs $\tilde x[n]$ and a shape $h[n]$ will repeat the shape at the diracs position.
+  \item A dirac at the end of the signal will cut the shape for discrete convolution where the outside of the sampling is $0$.
+  \item With circular convolution the shape is repeated t the beginning of the signal.
+  \item One can remove border effects by creating virtual periodic signal with zeros (zero padding, see fast convolution).
+\end{itemize}
+
+
+
+\begin{center}
+  \includegraphics[width=1\linewidth]{imgs/sig_conv/conv_scipy_signal.pdf}
+\end{center}\vspace{-2mm}
+
+\begin{block}{The Scipy \incode{scipy.signal.convolve} function:}\vspace{-2mm}
+  \begin{itemize}
+      \item Convolution between two signals of support respectively $N$ and $M$ samples supposing that their values are $0$ outside of the support.
+      \item The third parameter is \incode{mode} that change the size of the output : \vspace{-1mm}
+      \begin{itemize}
+          \item \incode{mode='full'} returns a signal of support $N+M-1$ (default).
+          \item \incode{mode='valid'} returns a signal of support $|N-M|+1$ with only  the samples that do not rely on zeros padding of the larger signal.
+          \item \incode{mode='same'} returns a signal of the same size as the first input.
+      \end{itemize}
+      \item Parameter \incode{method} allows to choose between \incode{'direct'} computation and \incode{'fft'} and selects the most efficient by default.
+  \end{itemize}
+  
+
+  
+\end{block}\vspace{-2mm}
+
+
+\begin{center}
+  \includegraphics[width=1\linewidth]{imgs/sig_conv/conv_scipy_ndimage.pdf}
+
+\end{center}\vspace{-2mm}
+
+\begin{block}{The Scipy \incode{scipy.ndimage.convolve}  function:}\vspace{-2mm}
+  \begin{itemize}
+      \item Always return the same size as the first parameter by default.
+      \item  The \incode{mode} parameter allows selecting the borders of a signal $x=(abcd)$:
+      \begin{itemize}
+          \item \incode{mode='reflect'} : $(d c b a | a b c d | d c b a)$ (default)
+          \item  \incode{mode='constant'} : $(k k k k | a b c d | k k k k)$
+          \item \incode{mode='nearest'} : $(a a a a | a b c d | d d d d)$
+          \item \incode{mode='mirror'} : $(d c b | a b c d | c b a)$
+          \item \incode{mode='wrap'} : $(a b c d | a b c d | a b c d)$ (circular convolution)
+      \end{itemize}
+      \item  Parameter \incode{origin} allows to select the origin of the filter $h$.
+  \end{itemize}
+  
+
+
+\end{block}
+
+
 \subsection{Quantization and storage}
 \label{sec:}
-
 
 \section{Fundamental signal processing problems}
 \label{sec:sp_prob}
