@@ -61,23 +61,124 @@
 \contentsline {subsection}{\numberline {2.4.2}{\ignorespaces Deconvolution, unmixing and regression\relax }}{81}
 \contentsline {subsection}{\numberline {2.4.3}{\ignorespaces Blind source separation and deconvolution\relax }}{82}
 \contentsline {chapter}{\numberline {3}{\ignorespaces Fourier analysis and analog filtering\relax }}{84}
-\contentsline {section}{\numberline {3.1}{\ignorespaces Fourier transform\relax }}{85}
-\contentsline {section}{\numberline {3.2}{\ignorespaces Frequency response and filtering\relax }}{87}
-\contentsline {section}{\numberline {3.3}{\ignorespaces Applications of analog signal processing\relax }}{89}
-\contentsline {chapter}{\numberline {4}{\ignorespaces Digital signal processing\relax }}{91}
-\contentsline {section}{\numberline {4.1}{\ignorespaces Sampling and Analog/Digital conversion\relax }}{92}
-\contentsline {section}{\numberline {4.2}{\ignorespaces Digital filtering and transfer function\relax }}{94}
-\contentsline {section}{\numberline {4.3}{\ignorespaces Finite signals and Fast Fourier Transform\relax }}{96}
-\contentsline {section}{\numberline {4.4}{\ignorespaces Applications of DSP\relax }}{98}
-\contentsline {chapter}{\numberline {5}{\ignorespaces Random signals\relax }}{100}
-\contentsline {section}{\numberline {5.1}{\ignorespaces Random Signals and Correlations\relax }}{101}
-\contentsline {section}{\numberline {5.2}{\ignorespaces Frequency representation of random signals\relax }}{103}
-\contentsline {section}{\numberline {5.3}{\ignorespaces AR modeling and linear prediction\relax }}{105}
-\contentsline {chapter}{\numberline {6}{\ignorespaces Signal representations\relax }}{107}
-\contentsline {section}{\numberline {6.1}{\ignorespaces Short Time Fourier Transform\relax }}{108}
-\contentsline {section}{\numberline {6.2}{\ignorespaces Common signal representations\relax }}{110}
-\contentsline {section}{\numberline {6.3}{\ignorespaces Source separation and dictionary learning\relax }}{112}
-\contentsline {section}{\numberline {6.4}{\ignorespaces Machine learning for signal processing\relax }}{114}
-\contentsline {chapter}{Bibliography}{116}
-\contentsline {chapter}{Index}{119}
+\contentsline {paragraph}{Applications}{85}
+\contentsline {section}{\numberline {3.1}{\ignorespaces Fourier series\relax }}{87}
+\contentsline {paragraph}{History}{89}
+\contentsline {paragraph}{Decomposition as trigonometric series}{90}
+\contentsline {paragraph}{Example : Square wave}{92}
+\contentsline {paragraph}{Complex harmonic decomposition}{93}
+\contentsline {paragraph}{Relations between decompositions}{94}
+\contentsline {section}{\numberline {3.2}{\ignorespaces Fourier transform\relax }}{96}
+\contentsline {subsection}{\numberline {3.2.1}{\ignorespaces Definition\relax }}{97}
+\contentsline {paragraph}{Harmonic representation}{98}
+\contentsline {paragraph}{Fourier Transform in $L_p(\mathbb {R})$}{99}
+\contentsline {paragraph}{Parseval-Plancherel identity in $L_2$}{100}
+\contentsline {paragraph}{Fourier Transform in $\mathbb {R}^d$}{101}
+\contentsline {paragraph}{Fourier Tansform in $\mathbb {R}^d$}{102}
+\contentsline {paragraph}{Fourier transform and angular frequency}{103}
+\contentsline {subsection}{\numberline {3.2.2}{\ignorespaces Examples of Fourier Transform\relax }}{104}
+\contentsline {paragraph}{Rectangular function}{105}
+\contentsline {paragraph}{Decreasing exponential}{107}
+\contentsline {subsection}{\numberline {3.2.3}{\ignorespaces Properties of the Fourier Transform\relax }}{109}
+\contentsline {paragraph}{Linearity}{110}
+\contentsline {paragraph}{Time shift}{111}
+\contentsline {paragraph}{Frequency shift}{112}
+\contentsline {paragraph}{Time scaling}{113}
+\contentsline {paragraph}{Derivation}{114}
+\contentsline {paragraph}{Integration}{115}
+\contentsline {paragraph}{Even and odd signals}{116}
+\contentsline {paragraph}{Conjugate signal}{119}
+\contentsline {paragraph}{Duality of the Fourier Transform}{120}
+\contentsline {paragraph}{Convolution and Fourier Transform}{121}
+\contentsline {paragraph}{Convolution and Fourier Transform}{122}
+\contentsline {paragraph}{Proof}{123}
+\contentsline {paragraph}{Fourier transform and Dirac delta}{124}
+\contentsline {paragraph}{The dirac comb}{125}
+\contentsline {paragraph}{Fourier transform of periodic signals}{126}
+\contentsline {paragraph}{Cosine}{127}
+\contentsline {paragraph}{FT of trigonometric functions}{128}
+\contentsline {paragraph}{Fourier transform of periodic signal}{129}
+\contentsline {paragraph}{How to compute a Fourier Transform ?}{130}
+\contentsline {paragraph}{Usual steps}{131}
+\contentsline {section}{\numberline {3.3}{\ignorespaces Frequency response and filtering\relax }}{133}
+\contentsline {subsection}{\numberline {3.3.1}{\ignorespaces Frequency response of an LTI system\relax }}{134}
+\contentsline {paragraph}{Impulse response and frequency response}{135}
+\contentsline {paragraph}{Response to a mono-frequency signal}{136}
+\contentsline {paragraph}{Static gain}{137}
+\contentsline {paragraph}{Ordinary Differential Equation (ODE)}{138}
+\contentsline {paragraph}{Frequency response of an ODE}{139}
+\contentsline {subsection}{\numberline {3.3.2}{\ignorespaces Representation of the frequency response\relax }}{140}
+\contentsline {paragraph}{Frequency interpretation of the frequency response}{141}
+\contentsline {paragraph}{Graphical representation of systems}{142}
+\contentsline {paragraph}{Bode plot}{143}
+\contentsline {paragraph}{Definition}{145}
+\contentsline {paragraph}{Properties of the Bode plot}{146}
+\contentsline {paragraph}{Multiplication}{147}
+\contentsline {paragraph}{Division}{148}
+\contentsline {paragraph}{Nichosl plot}{150}
+\contentsline {paragraph}{Nyquist plot}{151}
+\contentsline {paragraph}{Definition}{153}
+\contentsline {paragraph}{Frequency response of electronic systems}{154}
+\contentsline {paragraph}{Principle}{155}
+\contentsline {paragraph}{Resistor}{156}
+\contentsline {paragraph}{Capacitor}{157}
+\contentsline {paragraph}{Inductor}{158}
+\contentsline {paragraph}{First order system}{159}
+\contentsline {paragraph}{Normalized system}{161}
+\contentsline {paragraph}{Modulus}{162}
+\contentsline {paragraph}{Argument}{163}
+\contentsline {paragraph}{Bode plot}{164}
+\contentsline {paragraph}{Nichols plot}{166}
+\contentsline {paragraph}{Nyquist plot}{168}
+\contentsline {paragraph}{Secon order system}{170}
+\contentsline {paragraph}{Linear differential equation}{172}
+\contentsline {paragraph}{Factorization}{173}
+\contentsline {paragraph}{Response of the system for $z>1$}{174}
+\contentsline {paragraph}{Response of the system for $z=1$}{175}
+\contentsline {paragraph}{Response of the system for $z<1$}{176}
+\contentsline {paragraph}{Impulse and step responses}{177}
+\contentsline {paragraph}{Bode plot}{179}
+\contentsline {paragraph}{Modulus}{180}
+\contentsline {paragraph}{Properties of the modulus}{181}
+\contentsline {paragraph}{Argument}{182}
+\contentsline {paragraph}{Bode plot}{183}
+\contentsline {paragraph}{Nichols plot}{185}
+\contentsline {paragraph}{Nyquist plot}{187}
+\contentsline {section}{\numberline {3.4}{\ignorespaces Applications of analog signal processing\relax }}{190}
+\contentsline {paragraph}{Applications of analog signal processing}{191}
+\contentsline {subsection}{\numberline {3.4.1}{\ignorespaces Analog filtering\relax }}{192}
+\contentsline {paragraph}{Definition}{193}
+\contentsline {paragraph}{Objectives}{194}
+\contentsline {paragraph}{Filtering and bandwidth}{195}
+\contentsline {paragraph}{Gain and Attenuation}{196}
+\contentsline {paragraph}{Bandwith and passband}{197}
+\contentsline {paragraph}{Types of filters}{198}
+\contentsline {paragraph}{Filter distortion}{199}
+\contentsline {paragraph}{Undistorted transmission}{200}
+\contentsline {paragraph}{Phase distortion}{202}
+\contentsline {paragraph}{Ideal low pass filter}{203}
+\contentsline {paragraph}{Definition}{204}
+\contentsline {paragraph}{Realizable filter}{205}
+\contentsline {paragraph}{Filter design}{206}
+\contentsline {paragraph}{Real filter}{207}
+\contentsline {paragraph}{Constraints of a filter}{208}
+\contentsline {paragraph}{Parameters:}{210}
+\contentsline {subsection}{\numberline {3.4.2}{\ignorespaces Modulation\relax }}{211}
+\contentsline {subsection}{\numberline {3.4.3}{\ignorespaces Fourier optics\relax }}{212}
+\contentsline {chapter}{\numberline {4}{\ignorespaces Digital signal processing\relax }}{214}
+\contentsline {section}{\numberline {4.1}{\ignorespaces Sampling and Analog/Digital conversion\relax }}{215}
+\contentsline {section}{\numberline {4.2}{\ignorespaces Digital filtering and transfer function\relax }}{217}
+\contentsline {section}{\numberline {4.3}{\ignorespaces Finite signals and Fast Fourier Transform\relax }}{219}
+\contentsline {section}{\numberline {4.4}{\ignorespaces Applications of DSP\relax }}{221}
+\contentsline {chapter}{\numberline {5}{\ignorespaces Random signals\relax }}{223}
+\contentsline {section}{\numberline {5.1}{\ignorespaces Random Signals and Correlations\relax }}{224}
+\contentsline {section}{\numberline {5.2}{\ignorespaces Frequency representation of random signals\relax }}{226}
+\contentsline {section}{\numberline {5.3}{\ignorespaces AR modeling and linear prediction\relax }}{228}
+\contentsline {chapter}{\numberline {6}{\ignorespaces Signal representations\relax }}{230}
+\contentsline {section}{\numberline {6.1}{\ignorespaces Short Time Fourier Transform\relax }}{231}
+\contentsline {section}{\numberline {6.2}{\ignorespaces Common signal representations\relax }}{233}
+\contentsline {section}{\numberline {6.3}{\ignorespaces Source separation and dictionary learning\relax }}{235}
+\contentsline {section}{\numberline {6.4}{\ignorespaces Machine learning for signal processing\relax }}{237}
+\contentsline {chapter}{Bibliography}{239}
+\contentsline {chapter}{Index}{242}
 

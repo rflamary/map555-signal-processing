@@ -1,0 +1,547 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Rémi Flamary" />
+<meta name="generator" content="LaTeX Lwarp package" />
+<meta name="description" content="Lecture notes for MAP555 :      Signal Processing" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<title>MAP555 : Signal Processing</title>
+<link rel="stylesheet" type="text/css" href="map555.css" />
+
+
+
+<!-- https://groups.google.com/forum/#!topic/
+                                       mathjax-users/jUtewUcE2bY -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX AMSmath Ready",function () {
+      var seteqsectionDefault = {name: "", num: 0};
+      var seteqsections = {}, seteqsection = seteqsectionDefault;
+      var TEX = MathJax.InputJax.TeX, PARSE = TEX.Parse;
+      var AMS = MathJax.Extension["TeX/AMSmath"];
+      TEX.Definitions.Add({
+      macros: {
+            seteqsection: "mySection",
+            seteqnumber: "mySetEqNumber"
+      }
+      });
+
+
+      PARSE.Augment({
+      mySection: function (name) {
+            seteqsection.num = AMS.number;
+            var n = this.GetArgument(name);
+            if (n === "") {
+                seteqsection = seteqsectionDefault;
+            } else {
+                if (!seteqsections["_"+n])
+                     seteqsections["_"+n] = {name:n, num:0};
+                seteqsection = seteqsections["_"+n];
+            }
+            AMS.number = seteqsection.num;
+      },
+      mySetEqNumber: function (name) {
+            var n = this.GetArgument(name);
+            if (!n || !n.match(/^ *[0-9]+ *$/))
+                n = "";
+            else
+                n = parseInt(n)-1;
+            <!-- $ syntax highlighting -->
+            if (n === "" || n < 1)
+                TEX.Error
+                ("Argument to "+name+" should be a positive integer");
+            AMS.number = n;
+      }
+      });
+      MathJax.Hub.Config({
+      TeX: {
+            equationNumbers: {
+                formatTag: function (n) {
+                     <!-- if not numeric, don't include the chapter -->
+                     if (!n.match(/^ *[0-9]+ *$/ ))
+                     <!-- $ syntax highlighting -->
+                            return "("+(n).replace(/^\./,"")+")" ;
+                     else
+                            return "("+(seteqsection.name+"."+n).replace(/^\./,"")+")" ;
+                },
+                formatID: function (n) {
+                     n = (seteqsection.name+'.'+n).replace
+                            (/[:"'<>&]/g,"").replace(/^\./,"");
+                     return 'mjx-eqn-' + n;
+                }
+            }
+      }
+      });
+});
+</script>
+
+
+<!-- http://docs.mathjax.org/en/latest/options/ThirdParty.html -->
+<script type="text/x-mathjax-config">
+  MathJax.Ajax.config.path["Contrib"] =
+      "https://cdn.mathjax.org/mathjax/contrib";
+</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+      TeX: {
+            extensions: ["autoload-all.js"] ,
+            equationNumbers: {
+                autoNumber: "AMS"
+            }
+      }
+});
+</script>
+
+
+<!-- Alternative CDN provider: -->
+<script type="text/javascript" async
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_HTML-full">
+</script>
+
+
+<!-- No longer supported after April 30, 2017: -->
+<!--
+<script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full">
+</script>
+-->
+ <script type="text/javascript"
+   src="navigation.js">
+   </script>
+
+
+
+</head>
+<body>
+
+
+<a id="poly-autopage-238"></a>
+<nav class="topnavigation" ><a href="index.html" class="linkhome" >
+Home</a></nav>
+
+
+<div class="bodyandsidetoc" >
+<div class="sidetoccontainer" >
+
+
+<nav class="sidetoc" >
+
+
+<div class="sidetoctitle" >
+
+<p>
+<span class="sidetocthetitle" >MAP555 : Signal Processing </span>
+</p>
+
+<p>
+Contents
+</p>
+</div>
+
+
+<div class="sidetoccontents" >
+
+<p>
+<a href="index.html" class="linkhome" >
+Home</a>
+</p>
+
+<p>
+<a href="node-1.html#autosec-6" class="tocchapter" >
+<span class="sectionnumber" >1</span>&#x2003;Introduction</a>
+</p>
+
+
+<p>
+<a href="node-1.html#autosec-7" class="tocsection" >
+<span class="sectionnumber" >1.1</span>&#x2003;Signal processing</a>
+</p>
+
+
+<p>
+<a href="node-2.html#autosec-12" class="tocsection" >
+<span class="sectionnumber" >1.2</span>&#x2003;Bibliographical notes</a>
+</p>
+
+
+<p>
+<a href="node-3.html#autosec-19" class="tocsection" >
+<span class="sectionnumber" >1.3</span>&#x2003;About this document</a>
+</p>
+
+
+<p>
+<a href="node-4.html#autosec-21" class="tocchapter" >
+<span class="sectionnumber" >2</span>&#x2003;Signals and convolution</a>
+</p>
+
+
+<p>
+<a href="node-4.html#autosec-22" class="tocsection" >
+<span class="sectionnumber" >2.1</span>&#x2003;Signals and properties</a>
+</p>
+
+
+<p>
+<a href="node-5.html#autosec-46" class="tocsection" >
+<span class="sectionnumber" >2.2</span>&#x2003;Convolution and filtering</a>
+</p>
+
+
+<p>
+<a href="node-6.html#autosec-56" class="tocsection" >
+<span class="sectionnumber" >2.3</span>&#x2003;Discrete time and digital signals</a>
+</p>
+
+
+<p>
+<a href="node-7.html#autosec-79" class="tocsection" >
+<span class="sectionnumber" >2.4</span>&#x2003;Fundamental signal processing problems</a>
+</p>
+
+
+<p>
+<a href="node-8.html#autosec-84" class="tocchapter" >
+<span class="sectionnumber" >3</span>&#x2003;Fourier analysis and analog filtering</a>
+</p>
+
+
+<p>
+<a href="node-9.html#autosec-87" class="tocsection" >
+<span class="sectionnumber" >3.1</span>&#x2003;Fourier series</a>
+</p>
+
+
+<p>
+<a href="node-10.html#autosec-96" class="tocsection" >
+<span class="sectionnumber" >3.2</span>&#x2003;Fourier transform</a>
+</p>
+
+
+<p>
+<a href="node-11.html#autosec-133" class="tocsection" >
+<span class="sectionnumber" >3.3</span>&#x2003;Frequency response and filtering</a>
+</p>
+
+
+<p>
+<a href="node-12.html#autosec-190" class="tocsection" >
+<span class="sectionnumber" >3.4</span>&#x2003;Applications of analog signal processing</a>
+</p>
+
+
+<p>
+<a href="node-13.html#autosec-214" class="tocchapter" >
+<span class="sectionnumber" >4</span>&#x2003;Digital signal processing</a>
+</p>
+
+
+<p>
+<a href="node-13.html#autosec-215" class="tocsection" >
+<span class="sectionnumber" >4.1</span>&#x2003;Sampling and Analog/Digital conversion</a>
+</p>
+
+
+<p>
+<a href="node-14.html#autosec-217" class="tocsection" >
+<span class="sectionnumber" >4.2</span>&#x2003;Digital filtering and transfer function</a>
+</p>
+
+
+<p>
+<a href="node-15.html#autosec-219" class="tocsection" >
+<span class="sectionnumber" >4.3</span>&#x2003;Finite signals and Fast Fourier Transform</a>
+</p>
+
+
+<p>
+<a href="node-16.html#autosec-221" class="tocsection" >
+<span class="sectionnumber" >4.4</span>&#x2003;Applications of DSP</a>
+</p>
+
+
+<p>
+<a href="node-17.html#autosec-223" class="tocchapter" >
+<span class="sectionnumber" >5</span>&#x2003;Random signals</a>
+</p>
+
+
+<p>
+<a href="node-17.html#autosec-224" class="tocsection" >
+<span class="sectionnumber" >5.1</span>&#x2003;Random Signals and Correlations</a>
+</p>
+
+
+<p>
+<a href="node-18.html#autosec-226" class="tocsection" >
+<span class="sectionnumber" >5.2</span>&#x2003;Frequency representation of random signals</a>
+</p>
+
+
+<p>
+<a href="node-19.html#autosec-228" class="tocsection" >
+<span class="sectionnumber" >5.3</span>&#x2003;AR modeling and linear prediction</a>
+</p>
+
+
+<p>
+<a href="node-20.html#autosec-230" class="tocchapter" >
+<span class="sectionnumber" >6</span>&#x2003;Signal representations</a>
+</p>
+
+
+<p>
+<a href="node-20.html#autosec-231" class="tocsection" >
+<span class="sectionnumber" >6.1</span>&#x2003;Short Time Fourier Transform</a>
+</p>
+
+
+<p>
+<a href="node-21.html#autosec-233" class="tocsection" >
+<span class="sectionnumber" >6.2</span>&#x2003;Common signal representations</a>
+</p>
+
+
+<p>
+<a href="node-22.html#autosec-235" class="tocsection" >
+<span class="sectionnumber" >6.3</span>&#x2003;Source separation and dictionary learning</a>
+</p>
+
+
+<p>
+<a href="node-23.html#autosec-237" class="tocsection" >
+<span class="sectionnumber" >6.4</span>&#x2003;Machine learning for signal processing</a>
+</p>
+
+
+<p>
+<a href="node-24.html#autosec-239" class="tocchapter" >
+Bibliography</a>
+</p>
+
+
+<p>
+<a href="node-25.html#autosec-242" class="tocchapter" >
+Index</a>
+</p>
+
+
+</div>
+
+</nav>
+
+</div>
+
+
+<div class="bodycontainer" >
+
+
+<section class="textbody" >
+
+<h1></h1>
+
+<!--MathJax customizations:-->
+
+
+<div class="hidden" >
+
+\(\newcommand \ensuremath [1]{#1}\)
+
+\(\newcommand \footnote [2][]{\text {( Footnote #1 )}}\)
+
+\(\newcommand \footnotemark [1][]{\text {( Footnote #1 )}}\)
+
+\(\newcommand {\LWRframebox }[2][]{\fbox {#2}} \newcommand {\framebox }[1][]{\LWRframebox } \)
+
+\(\newcommand {\setlength }[2]{}\)
+
+\(\newcommand {\addtolength }[2]{}\)
+
+\(\newcommand {\setcounter }[2]{}\)
+
+\(\newcommand {\addtocounter }[2]{}\)
+
+\(\newcommand {\cline }[1]{}\)
+
+\(\newcommand {\directlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\luatexdirectlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\intertext }[1]{\\ \text {#1}\notag \\}\)
+
+\(\newcommand {\Sh }{{III}}\)
+
+\(\newcommand {\dbR }{{\mathbb {R}}}\)
+
+\(\newcommand {\R }{{\mathbb {R}}}\)
+
+\(\newcommand {\dbC }{{\mathbb {C}}}\)
+
+\(\newcommand {\u }{{\mathbf {u}}}\)
+
+\(\newcommand {\v }{{\mathbf {v}}}\)
+
+\(\newcommand {\x }{{\mathbf {x}}}\)
+
+\(\newcommand {\h }{{\mathbf {h}}}\)
+
+\(\newcommand {\y }{{\mathbf {y}}}\)
+
+\(\newcommand {\C }{{\mathbf {C}}}\)
+
+\(\newcommand {\H }{{\mathbf {H}}}\)
+
+\(\newcommand {\p }{{\mathbf {p}}}\)
+
+\(\newcommand {\rme }{{e}}\)
+
+\(\newcommand {\rmd }{{d}}\)
+
+\(\newcommand {\rmi }{{i}}\)
+
+\(\newcommand {\ostar }{{{\mbox {$\;\odot \!\!\!\!\!\star ~$}}}}\)
+
+\(\newcommand {\pause }{{ }}\)
+
+</div>
+
+<p>
+<h3 id="autosec-239">Bibliography</h3>
+<a id="poly-autopage-239"></a>
+
+
+<ul style="list-style-type:none">
+
+<li>
+<p>
+[<a id="r0"></a>Fourier, 1807]&#x2003; Fourier, J. B.&nbsp;J. (1807). Mémoire sur la propagation de la chaleur dans les corps solides.
+ <a href="https://scholar.google.fr/scholar?q=Fourier, J. B.&nbsp;J. (1807). Mémoire sur la propagation de la chaleur dans les corps solides.
+">[Google Scholar]</a>.</p>
+</li>
+<li>
+<p>
+[<a id="r1"></a>Haykin and Van&nbsp;Veen, 2007]&#x2003; Haykin, S. and Van&nbsp;Veen, B. (2007). <i>Signals and systems</i>. John Wiley &amp; Sons.
+ <a href="https://scholar.google.fr/scholar?q=Haykin, S. and Van&nbsp;Veen, B. (2007). Signals and systems. John Wiley &amp; Sons.
+">[Google Scholar]</a>.</p>
+</li>
+<li>
+<p>
+[<a id="r2"></a>Hewitt and Hewitt, 1979]&#x2003; Hewitt, E. and Hewitt, R.&nbsp;E. (1979). The gibbs-wilbraham phenomenon: an episode in fourier analysis. <i>Archive for history of Exact Sciences</i>, 21(2):129–160.
+ <a href="https://scholar.google.fr/scholar?q=Hewitt, E. and Hewitt, R.&nbsp;E. (1979). The gibbs-wilbraham phenomenon: an episode in fourier analysis. Archive for history of Exact Sciences, 21(2):129–160.
+">[Google Scholar]</a>.</p>
+</li>
+<li>
+<p>
+[<a id="r3"></a>Hunter, 2019]&#x2003; Hunter, J. (2019). Notes on partial differential equations. 2014. <i>URL https://www. math. ucdavis. edu/˜ hunter/m218a_09/pde_notes. pdf</i>.
+ <a href="https://scholar.google.fr/scholar?q=Hunter, J. (2019). Notes on partial differential equations. 2014. URL https://www. math. ucdavis. edu/˜ hunter/m218a_09/pde_notes. pdf.
+">[Google Scholar]</a>.</p>
+</li>
+<li>
+<p>
+[<a id="r4"></a>Jutten, 2018]&#x2003; Jutten, C. (2018). <i>Théorie du signal</i>. Univ. Grenoble Alpes - Polytech’ Grenoble.
+ <a href="https://scholar.google.fr/scholar?q=Jutten, C. (2018). Théorie du signal. Univ. Grenoble Alpes - Polytech’ Grenoble.
+">[Google Scholar]</a>.</p>
+</li>
+<li>
+<p>
+[<a id="r5"></a>Kay, 1993]&#x2003; Kay, S.&nbsp;M. (1993). <i>Fundamentals of statistical signal processing</i>. Prentice Hall PTR.
+ <a href="https://scholar.google.fr/scholar?q=Kay, S.&nbsp;M. (1993). Fundamentals of statistical signal processing. Prentice Hall PTR.
+">[Google Scholar]</a>.</p>
+</li>
+<li>
+<p>
+[<a id="r6"></a>Mallat, 1999]&#x2003; Mallat, S. (1999). <i>A wavelet tour of signal processing</i>. Elsevier.
+ <a href="https://scholar.google.fr/scholar?q=Mallat, S. (1999). A wavelet tour of signal processing. Elsevier.
+">[Google Scholar]</a>.</p>
+</li>
+<li>
+<p>
+[<a id="r7"></a>Mallat et&nbsp;al., 2015]&#x2003; Mallat, S., Moulines, E., and Roueff, F. (2015). Traitement du signal. <i>Polycopié MAP 555, École Polytechnique</i>.
+ <a href="https://scholar.google.fr/scholar?q=Mallat, S., Moulines, E., and Roueff, F. (2015). Traitement du signal. Polycopié MAP 555, École Polytechnique.
+">[Google Scholar]</a>.</p>
+</li>
+<li>
+<p>
+[<a id="r8"></a>Oppenheim and Shafer, 1999]&#x2003; Oppenheim, A.&nbsp;V. and Shafer, R.&nbsp;W. (1999). <i>Discrete-time signal processing</i>. Prentice Hall Inc.
+ <a href="https://scholar.google.fr/scholar?q=Oppenheim, A.&nbsp;V. and Shafer, R.&nbsp;W. (1999). Discrete-time signal processing. Prentice Hall Inc.
+">[Google Scholar]</a>.</p>
+</li>
+<li>
+<p>
+[<a id="r9"></a>Oppenheim et&nbsp;al., 1997]&#x2003; Oppenheim, A.&nbsp;V., Willsky, A.&nbsp;S., and Nawab, S.&nbsp;H. (1997). Signals and systems prentice hall. <i>Inc., Upper Saddle River, New Jersey</i>, 7458.
+ <a href="https://scholar.google.fr/scholar?q=Oppenheim, A.&nbsp;V., Willsky, A.&nbsp;S., and Nawab, S.&nbsp;H. (1997). Signals and systems prentice hall. Inc., Upper Saddle River, New Jersey, 7458.
+">[Google Scholar]</a>.</p>
+</li>
+<li>
+<p>
+[<a id="r10"></a>Papoulis, 1965]&#x2003; Papoulis, A. (1965). Random variables and stochastic processes.
+ <a href="https://scholar.google.fr/scholar?q=Papoulis, A. (1965). Random variables and stochastic processes.
+">[Google Scholar]</a>.</p>
+</li>
+<li>
+<p>
+[<a id="r11"></a>Papoulis, 1977]&#x2003; Papoulis, A. (1977). <i>Signal analysis</i>, volume 191. McGraw-Hill New York.
+ <a href="https://scholar.google.fr/scholar?q=Papoulis, A. (1977). Signal analysis, volume 191. McGraw-Hill New York.
+">[Google Scholar]</a>.</p>
+</li>
+<li>
+<p>
+[<a id="r12"></a>Rahimi and Recht, 2008]&#x2003; Rahimi, A. and Recht, B. (2008). Random features for large-scale kernel machines. In <i>Advances in neural information processing systems</i>, pages 1177–1184.
+ <a href="https://scholar.google.fr/scholar?q=Rahimi, A. and Recht, B. (2008). Random features for large-scale kernel machines. In Advances in neural information processing systems, pages 1177–1184.
+">[Google Scholar]</a>.</p>
+</li>
+<li>
+<p>
+[<a id="r13"></a>Roddier, 1985]&#x2003; Roddier, F. (1985). <i>Distributions et Transformée de Fourier</i>. McGraw-Hill.
+ <a href="https://scholar.google.fr/scholar?q=Roddier, F. (1985). Distributions et Transformée de Fourier. McGraw-Hill.
+">[Google Scholar]</a>.</p>
+</li>
+<li>
+<p>
+[<a id="r14"></a>Ross et&nbsp;al., 1996]&#x2003; Ross, S.&nbsp;M., Kelly, J.&nbsp;J., Sullivan, R.&nbsp;J., Perry, W.&nbsp;J., Mercer, D., Davis, R.&nbsp;M., Washburn, T.&nbsp;D., Sager, E.&nbsp;V., Boyce, J.&nbsp;B., and Bristow, V.&nbsp;L. (1996). <i>Stochastic
+ <a href="https://scholar.google.fr/scholar?q=Ross, S.&nbsp;M., Kelly, J.&nbsp;J., Sullivan, R.&nbsp;J., Perry, W.&nbsp;J., Mercer, D., Davis, R.&nbsp;M., Washburn, T.&nbsp;D., Sager, E.&nbsp;V., Boyce, J.&nbsp;B., and Bristow, V.&nbsp;L. (1996). Stochastic
+">[Google Scholar]</a>.processes</i>, volume&nbsp;2. Wiley New York.
+</p>
+</li>
+<li>
+<p>
+[<a id="r15"></a>Vetterli and Kovacevic, 1995]&#x2003; Vetterli, M. and Kovacevic, J. (1995). <i>Wavelets and subband coding</i>. Number BOOK. Prentice-hall.
+ <a href="https://scholar.google.fr/scholar?q=Vetterli, M. and Kovacevic, J. (1995). Wavelets and subband coding. Number BOOK. Prentice-hall.
+">[Google Scholar]</a>.</p>
+</li>
+<li>
+<p>
+[<a id="r16"></a>Vretblad, 2003]&#x2003; Vretblad, A. (2003). <i>Fourier analysis and its applications</i>, volume 223. Springer Science &amp; Business Media.
+ <a href="https://scholar.google.fr/scholar?q=Vretblad, A. (2003). Fourier analysis and its applications, volume 223. Springer Science &amp; Business Media.
+">[Google Scholar]</a>.</p>
+<p>
+
+</p>
+</li>
+</ul>
+</section>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>
+<p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /> Rémi Flamary, 2021</p>
+</p>
+
+</footer>
+
+
+<nav class="botnavigation" ><a href="index.html" class="linkhome" >
+Home</a></nav>
+
+</body>
+</html>
