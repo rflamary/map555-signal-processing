@@ -2,6 +2,9 @@
 \usepackage[utf8]{inputenc}
 
 \usepackage[mathjax,HTMLFilename={node-},latexmk,HomeHTMLFilename=index,]{lwarp}
+
+%\usepackage[latexmk,HomeHTMLFilename=index_epub]{lwarp}
+%\booltrue{FormatEPUB}
 \CSSFilename{map555.css}
 
 
@@ -47,10 +50,13 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /> Rémi Flamary, 2
 \mtcindent=10pt
 \usepackage{fancyvrb}
 
-
-
-
-
+\DeclareFontFamily{U}{wncy}{}
+\DeclareFontShape{U}{wncy}{m}{n}{<->wncyr10}{}
+\DeclareSymbolFont{mcy}{U}{wncy}{m}{n}
+\DeclareMathSymbol{\Sh}{\mathord}{mcy}{"58} 
+\begin{warpHTML}
+  \CustomizeMathJax{\newcommand{\Sh}{{III}}}
+\end{warpHTML}
 \mtcsetfeature{minitoc}{open}{\vspace{1.5mm}}
 \mtcsetfeature{minitoc}{close}{\vspace{1.5mm}}
 
@@ -76,6 +82,9 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /> Rémi Flamary, 2
 % replace the block from beamer
 \newenvironment{block}[1]{\paragraph{#1}}{}
 \newenvironment{exampleblock}[1]{\paragraph{#1}}{}
+\newenvironment{columns}[1][]{ }{ }
+\newenvironment{column}[1][]{ }{ }
+\newcommand{\frametitle}[1]{\paragraph{#1}}
 
 \input{notations.tex}
 \input{notations_lwarp.tex}
@@ -153,17 +162,7 @@ The document is also in PDF format \href{poly.pdf}{here}
 \chapter{Fourier analysis and analog filtering}
 \label{chap:fourier-analog}
 
-
-%\lipsum[2-4]
-\section{Fourier transform}
-\label{sec:fourier-transform}
-%\lipsum[2-4]
-\section{Frequency response and filtering}
-\label{sec:freq-response}
-%\lipsum[2-4]
-\section{Applications of analog signal processing}
-\label{sec:appli-ft}
-%\lipsum[2-4]
+\input{3_fourier}
 
 \chapter{Digital signal processing}
 \label{chap:dsp}
