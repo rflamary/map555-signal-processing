@@ -20,7 +20,7 @@
 \section{Fourier series}
 \label{sec:fourier-transform}
 
-
+\index{Fourier series}
 
 \begin{center}
     \includegraphics[width=.7\linewidth]{imgs/fourier/fourier_series_title}
@@ -127,7 +127,7 @@ $$
 \label{sec:}
 
     The Fourier Transform (FT) of a signal  $x(t)$ can be expressed as
-    \index{Fourier Transform}
+    \index{Fourier transform}\index{Fourier transform!Definition}
 
     \begin{equation}
       \mathcal{F}[x(t)]= X(f) = \int_{-\infty}^\infty e^{- i 2 \pi f t} x(t) d t 
@@ -219,7 +219,8 @@ $$
   More details in \cite[Chap. 5.A]{hunter2019notes} and \cite[Chap. 1]{mallat2015traitement}
 
 
-  \frametitle{Fourier Transform in $\R^d$}
+  \frametitle{Fourier Transform in $\R^d$}\index{Fourier transform! Fourier
+  transform in $\R^d$}
 
   The Fourier Transform can be naturally extended to functions in $\R^d$.
 
@@ -242,7 +243,8 @@ $$
     \end{itemize}
   \end{block}
 
-  \frametitle{Fourier transform and angular frequency}
+  \frametitle{Fourier transform and angular
+  frequency}\index{Frequency}\index{Angular frequency}
   \begin{itemize}
   \item The FT in this course is a function of frequency $f$ (in Hz).
   \item Another common way to represent frequency is the angular frequency $w$ (in rad/s) such that
@@ -260,7 +262,7 @@ $$w=2\pi f,\quad \quad\quad f=\frac{w}{2\pi}$$
 
   \subsection{Examples of Fourier Transform}
   \label{sec:}
-
+\index{Fourier transform!Examples}
   \begin{exampleblock}{Rectangular function}
     %\vspace{5mm}
       \begin{columns}
@@ -336,9 +338,9 @@ $$w=2\pi f,\quad \quad\quad f=\frac{w}{2\pi}$$
 
 
 \subsection{Properties of the Fourier Transform}
-\label{sec:}
+\label{sec:}\index{Fourier transform!Properties}
 
-\begin{block}{Linearity}
+\begin{block}{Linearity}\index{Properties!Linearity}
     Ley $x_1(t)$ and $x_2(t)$ two signals of TF $X_1(f)$ and $X_2(f)$ respectively. 
   
   For $a \in \R$ and $b \in \R$, we have :
@@ -353,7 +355,7 @@ $$w=2\pi f,\quad \quad\quad f=\frac{w}{2\pi}$$
   \end{block}
   
   
-  \begin{block}{Time shift}
+  \begin{block}{Time shift}\index{Time shift}
     Let $x(t)$ be a signal of FT $X(f)$. 
   
   For $t_0 \in \R$, let $x(t-t_0)$ a time shift of  $x(t)$ then we have:
@@ -369,7 +371,7 @@ $$w=2\pi f,\quad \quad\quad f=\frac{w}{2\pi}$$
   
 
 
-  \begin{block}{Frequency shift}
+  \begin{block}{Frequency shift}\index{Frequency shift}
 
     Let $x(t)$ be a signal of FT $X(f)$ then we have 
   $$
@@ -384,7 +386,7 @@ $$w=2\pi f,\quad \quad\quad f=\frac{w}{2\pi}$$
 \end{block}
 
 
-\begin{block}{Time scaling}
+\begin{block}{Time scaling}\index{Time scaling}
   Let $x(t)$ be a signal of FT $X(f)$  and $a$ a scaling $a \neq 0$ then we have
 $$
 \mathcal{F}[x(at)]= \frac{1}{|a|} X\left(\frac{f}{a}\right)
@@ -397,10 +399,10 @@ $$
 
 
 
-\begin{block}{Derivation}
+\begin{block}{Derivation}\index{Fourier Transform!Derivative}
     Let $x(t)$ be a signal of FT $X(f)$ then we have 
   $$
-  \mathcal{F}\left[\frac{d x(t)}{ dt }\right]=  j 2 \pi f X(f)
+  \mathcal{F}\left[\frac{d x(t)}{ dt }\right]=  i 2 \pi f X(f)
   $$
   % \begin{demo} Dériver le deux termes définissant la
   %   transformée de Fourier par $t$.
@@ -426,7 +428,7 @@ $$
   
 
 
-\begin{block}{Even and odd signals}
+\begin{block}{Even and odd signals}\index{Properties!Even and odd signals}
     \begin{center}
       \begin{tabular}{|l|l|}
         \hline
@@ -461,7 +463,7 @@ $$
     \end{block}
 
 
-    \paragraph{Duality of the Fourier Transform}
+    \paragraph{Duality of the Fourier Transform}\index{Fourier transform!Duality}
     
 
 Let $x(t)$ be a signal of FT $X(f)$. 
@@ -513,7 +515,7 @@ $$
 $$
 
 
-\paragraph{Convolution and Fourier Transform}
+\paragraph{Convolution and Fourier Transform}\index{Fourier transform!Convolution}\index{Convolution}
 \begin{block}{Convolution and Fourier Transform}
   Let two signals $x(t)$ and $h(t)$ of respective Fourier transform $X(f)$ and
   $H(f)$ then 
@@ -562,25 +564,6 @@ $$
 \end{block}
 
 
-\frametitle{The dirac comb}
-
-\begin{itemize}
-  \item The dirac comb is expressed as
-  \begin{equation}
-    \Sh_T(t)=\sum_{k=-\infty}^\infty \delta(t-kT)
-    \label{eq:dirac_comb}
-  \end{equation}
-  where $\Sh$ is the Cyrilic Sha symbol.
-  \item The Fourier Transform of the dirac comb is 
-  \begin{equation}
-    \mathcal{F}[\Sh_T(t)]=\sum_{k=-\infty}^\infty e^{2i\pi k T f}= \frac{1}{T}\sum_{k=-\infty}^\infty \delta\left(f-\frac{k}{T}\right) =  \frac{1}{T}\Sh_{\frac{1}{T}}(f)
-    \label{eq:ft_dirac_comb}
-  \end{equation}
-  where the second equality comes from the Poisson summation formula.
-  \item The dirac comb is used to perform a regular temporal sampling.
-  \item Multiplying a signal by the dirac comb corresponds to a convolution by a dirac comb in the Frequency domain (and vice versa).
-\end{itemize}
-%\end{example}
 
 
 \frametitle{Fourier transform of periodic signals}
@@ -1205,6 +1188,8 @@ $$ \tilde H(w)=\frac{\tilde Y(w)}{\tilde X(w)}=\pause\frac{Z_C}{Z_L+Z_R+Z_C}=\fr
 \subsection{Analog filtering}
 \label{sec:analogfiltering}
 
+\subsubsection{Properties of analog filters}
+
 \begin{block}{Definition}
     Signal processing system that aim at selecting part of the signal and attenuating another part (noise).
 
@@ -1341,8 +1326,7 @@ where $f_c$ is the cutoff frequency.
     \end{itemize}
   \end{block}
 
-
-  \frametitle{Filter design}
+\subsubsection{Filter design}
   
   \begin{block}{Real filter}
     \begin{itemize}
@@ -1360,12 +1344,19 @@ where $f_c$ is the cutoff frequency.
 %\vspace{-5mm}
        \begin{center}
  % \includegraphics[width=1.1\columnwidth]{imgs/gabarit3}
+ \begin{center}
+  \includegraphics[width=.5\linewidth]{imgs/fourier/gabarit3}
+\end{center}
 \end{center}
   \end{column}%\vspace{-5mm}
   \begin{column}%{6cm}%\vspace{-5mm}
     \begin{block}{Parameters:}
       \begin{itemize}
-      \item Bandwidth $BP$ and rejected band
+      \item Bandwidth $BW$ and rejected band:
+      \begin{itemize}
+        \item $w_c$ cutoff frequency
+        \item  $w_a$ attenuation frequency
+      \end{itemize}
       \item Oscillations :
         \begin{itemize}
         \item $\varepsilon$ in passing bandwidth
@@ -1376,8 +1367,356 @@ where $f_c$ is the cutoff frequency.
 
   \end{column}
 \end{columns}
- The constraints define the area that are acceptable for a given application.
+ The constraints define the transfer function area that are acceptable for a given application.
   \end{block}
+
+  \frametitle{Simple example  of filter design}
+  \begin{columns}
+  \begin{column}
+ \begin{itemize}
+\item Application to Brain computer interface.
+\item Interesting signal for event related potentials below $\approx 12$Hz ($w_s=2\pi*12$).
+\item Electrical noise (EDF) at $50$Hz ($w_{edf}=2\pi*50$).
+\item Two low power signals $A_s\approx A_n$.
+\item Maximum attenuation of signal at -3dB.
+\item Filtering with first order filter.
+\end{itemize}       
+  \end{column}
+  \begin{column}{5cm}
+    \begin{center}
+\includegraphics[width=.4\columnwidth]{imgs/fourier/RC2}
+\end{center}
+  \end{column}
+\end{columns}
+
+  \begin{columns}[t]
+  \begin{column}
+ \begin{itemize}
+\item Frequency response
+\pause
+$$
+\tilde H(w)=\frac{1}{1+j\frac{w}{w_0}}
+$$
+\item Gain in Db
+\begin{equation*}
+\tilde G(w)={-10\log_{10}\left(1+\frac{w^2}{w_0^2}\right)}
+\end{equation*}
+ \end{itemize}
+  \end{column}
+\begin{column}
+  \begin{itemize}
+  \item Before filtering:
+    SNR$=20\log_{10}\left(\frac{A_s}{A_n}\right)=\pause
+      {0}$
+  \item After filtering : 
+
+SNR$=\pause G(w_s)-G(w_{edf})$
+
+\item Choice of $w_0$?
+  \end{itemize}
+  \end{column}
+\end{columns}
+
+\begin{itemize}
+  \item SNR$=\tilde G(w_s)-\tilde G(w_{edf})$
+  \item SNR is a decreasing function of $w_0$ .
+  \end{itemize}     
+
+  \paragraph{What is the best value for $w_0$?}
+  
+  \begin{itemize}
+    \item With the maximum attenuation of 3dB constraint.
+      $\rightarrow \pause w_s\leq w_0 \leq \infty$.
+    \item For $w_0=w_{edf}\rightarrow R_{S/B}=\pause {2.76 dB}$ 
+    \item For $w_0=(w_{edf}+w_s)/2={37*2*\pi}\rightarrow
+      R_{S/B}=\pause {4.07dB}$
+    \item Pour $w_0=w_{s}\rightarrow R_{S/B}=\pause {9.63dB}$ 
+    \end{itemize}
+     $\rightarrow w_0=w_s$ respects the constraint and maximizes the SNR.
+
+
+     \frametitle{Approximating a low pass filter }
+
+     \begin{center}
+       \includegraphics[width=.45\columnwidth]{imgs/fourier/gabarit1}
+    \includegraphics[width=.45\columnwidth]{imgs/fourier/gabarit2}
+     \end{center}
+   
+     \begin{block}{Constraints for a low-pass filter}
+       \begin{itemize}
+       \item Passband: 
+   $ 1-\varepsilon \leq |\tilde H(w)| \leq 1 \quad \text{pour} \quad w<w_p$
+   \begin{itemize}
+   \item $w_p$: passing frequency.
+   \item $\varepsilon$: passband margin parameter ($\varepsilon=1/2\rightarrow-3dB$).
+   \end{itemize}
+   \item Stopband : $ |\tilde H(w)| \leq \delta \quad \text{pour} \quad w>w_a$
+     \begin{itemize}
+   \item $w_a$: attenuation frequency.
+   \item $\delta$: stopband margin parameter.
+     \end{itemize}
+   \item $w_a-w_c$ is the transition band.
+       \end{itemize}
+     \end{block}
+
+     \paragraph{Additional constraints}
+     
+     \begin{itemize}
+      \item Need for an approximation function that respects the constraints \emph{constrained optimization}.
+      \item Criterion is optimized (for instance maximization of SNR).
+      \item Two approaches are usually used:
+      \end{itemize}
+    
+      \begin{block}{Maximally flat frequency response}
+        \begin{itemize}
+          \item Minimal distortion is achieved when the passband is flat.
+        \item Let $|\tilde H(w)|$ be the modulus of the frequency response of an order $k$ filter.
+      \item  $|\tilde H(w)|$ is \textit{maximally flat} in 
+        $w=0$ if all the $K^{th}$derivatives are null
+        \end{itemize}
+    $$\frac{d^K|\tilde H(w)|}{dw^K}=0$$
+      \end{block}
+      \begin{block}{Equiripple filter}
+        \begin{itemize}
+          \item A better rollof (sharper decrease) can be achieved at teh cost of oscillations.
+          \item Oscilations can occur in the passband (leading to distortion) of cutband (limited attenuation).
+          %\item  On can accept some oscillations in the passband in order to get sharp decrease (roll-off).
+          \item An equiripple filter has constant magnitude for its oscillations in the bandpass.
+        \end{itemize}
+        %%One an  accept some socillation in the passband in order to get sharp decrease. An equiripple filter has constant magnitude for its oscillations in the bandpass.
+      \end{block}
+
+\subsubsection{Classical Analog Filters}
+
+\paragraph{Butterworth filter}
+
+\begin{itemize}
+  \item  Butterworth filters are  \emph{maximally
+    flat} \cite{butterworth1930theory}.
+\item The amplitude of the frequency response can be expressed as
+  \begin{columns}
+        \begin{column}{6cm}
+    \begin{equation}
+      \label{eq:a_butter}
+      |\tilde H(w)|=\frac{1}{\sqrt{1+\left(\frac{w}{w_c}\right)^{2n}}}
+    \end{equation}
+    with
+    \begin{itemize}
+    \item $n$: order of the filter.
+    \item $w_c$: cutoff frequency.
+    \end{itemize}
+  \end{column}
+  \begin{column}{4cm}
+    \includegraphics[width=.5\columnwidth]{imgs/fourier/butterworth}
+  \end{column}
+  \end{columns}
+\item The passing $w_p$ and
+  attenuation $w_a$ frequencies  are:
+\vspace{.5cm}
+\begin{columns}
+     \begin{column}{5.5cm}
+For $|\tilde H(w)|=1-\varepsilon$
+   $$w_p=\pause{ w_c\left(\frac{\varepsilon}{1-\varepsilon}\right)^{1/2n}}$$
+  \end{column}
+  \begin{column}{5.5cm}
+For $|\tilde H(w)|=\delta$
+$$w_a=\pause {w_c\left(\frac{1-\delta}{\delta}\right)^{1/2n}}$$
+  \end{column}
+  \end{columns}
+
+  \end{itemize}
+
+  \begin{itemize}
+    \item The Butterworth filter is monotonically decreasing with the frequency.
+    \item The amplitude of the frequency response can be expressed as
+$$|\tilde H(w)|=1-\frac{1}{2}\left(\frac{w}{w_c}\right)^{2n}+\frac{3}{8}\left(\frac{w}{w_c}\right)^{4n}-\frac{5}{16}\left(\frac{w}{w_c}\right)^{6n}+\dots$$
+\item The derivative in $w=0$ is then null up to order 
+  $k=\pause 2n-1$.
+\item The frequency response of a (normalized) Butterworth filter can be expressed as $\tilde H(w)  =\frac{1}{B_n(w)}$ where  $B_n(w)$ is a Butterworth polynomial :
+\begin{equation*}\footnotesize
+, \quad B_n(w)= \begin{cases} \prod_{k=1}^{\frac{n}{2}} \left[(jw))^2-2jw\cos\left(\frac{2k+n-1}{2n}\,\pi\right)+1\right] &\mbox{if } n =  \text{ even} \\
+  (jw+1)\prod_{k=1}^{\frac{n-1}{2}} \left[(jw))^2-2jw\cos\left(\frac{2k+n-1}{2n}\,\pi\right)+1\right] & \mbox{if } n =  \text{ odd}  \end{cases}
+\end{equation*}
+%where
+\begin{columns}[T]
+  \begin{column}
+    \begin{tabular}{|c|c|}\hline
+      Order & Polynomial \\\hline
+      1 & $1+jw$\\
+      2 & $(jw)^2+\sqrt{2}jw+1$\\
+      3& $(jw+1)((jw)^2+jw+1)$ \\\hline
+    %  4& $((jw)^2+0.7654jw+1)((jw)^2+1.8478jw+1)$ \\\hline
+    \end{tabular}
+  \end{column}
+\end{columns}
+\begin{center}
+
+ 
+\end{center}
+    \end{itemize}
+
+\paragraph{Chebyshev filter}
+
+
+
+\begin{center}
+  \includegraphics[width=.35\columnwidth]{imgs/fourier/cheby1}\hspace{1cm}
+  \includegraphics[width=.35\columnwidth]{imgs/fourier/cheby2}
+\end{center}
+\begin{itemize}
+\item Better rolloff than Butterworth of same order but leads to oscillations in the bandpass (type 1) or in the stopband (type 2).
+\item \emph{Equiripple} filter.
+\item Amplitude of the frequency response:
+ \begin{columns}
+   \begin{column}{6cm}
+$$  |\tilde H(w)|=\frac{1}{\sqrt{1+\varepsilon^2T_n^2\left(\frac{w}{w_c}\right)}}$$
+\end{column}
+\begin{column}{5cm}
+\begin{itemize}
+\item $T_n(\cdot)$: Chebyshev polynomial of order $n$.
+\end{itemize}
+\end{column}
+\end{columns}
+
+\end{itemize}
+    
+
+\subsection{Filter implementation}
+
+ Implementation of the filter consist in finding the physical components that recovers the selected  frequency response $\tilde H(w)$.
+
+
+  \begin{block}{Passive filter}
+    \begin{itemize}
+    \item Only passive components (R, C, L).
+   % \item Utilisation de condensateur, bobine , résistance.
+    \item No energy source, no amplification (conservation of energy).
+    \item The input and output impedance has an effect on the frequency response (impedance matching).
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Active filter}
+       \begin{itemize}
+    \item Use an energy source and Operational Amplifiers (OA).
+    %\item No need for impedance matching.
+   % \item Slightly more expensive.
+    %\item Mise en oeuvre à l'aide d'amplificateur opérationnel (AOP).
+    \item OA has near infinite impedance  but limited bandwidth (typically 100KHz).
+    \item Saturation can occur (non-linearity).
+    \item Stability can be a problem (due to feedback)
+  %  \item 
+    \end{itemize}
+  \end{block}
+  Rarely use inductors in practice (price, resistance, space, mutual inductance) !
+
+\paragraph{Passive filters}
+
+\begin{block}{Example filter}
+  \begin{columns}
+\begin{column}{7cm}
+\begin{itemize}
+\item Brain-Computer Interface application.
+\item $w_0=w_s=2\pi*12$
+\item $w_0=\frac{1}{RC}\rightarrow RC={\frac{1}{2*\pi*12}\approx 0.01326}$
+\item What to choose for $R$ and $C$ ?
+\item Price and space constraints.
+\end{itemize}     
+\end{column}
+\begin{column}{5cm}
+\begin{center}
+\includegraphics[width=.5\columnwidth]{imgs/fourier/RC2}
+\end{center}
+\end{column}
+\end{columns}
+\end{block}
+\begin{block}{Filter transformation}
+\begin{itemize}
+%  \item Transformation similaire à celle effectuée sur les FT.
+\item \textbf{low-pass $\rightarrow$ high-pass}
+$$ 1/jCw\rightarrow jLw \quad  \text{et} \quad jLw \rightarrow 1/jCw$$
+\item \textbf{low pass $\rightarrow$ band-pass}
+$$ 1/jCw\rightarrow B/C(jw+1/jw) \quad  \text{et} \quad jLw \rightarrow L/B/(jw+1/jw)$$
+\end{itemize}
+\end{block}
+
+\begin{block}{Butterworth Filter}
+  \begin{itemize}
+  \item Corresponding frequency response with the Cauer topology.
+  \item For an order $n$ filter with cutoff frequency $w_c=1$ the following structure:
+   \begin{center}
+\includegraphics[width=.8\columnwidth]{imgs/fourier/Cauer_lowpass}
+\end{center}
+With the values :
+\begin{itemize}
+\item $C_k=2\sin(\frac{2k-1}{2n}\pi)$ for $k$ odd.
+\item $L_k=2\sin(\frac{2k-1}{2n}\pi)$ for $k$ even.
+\end{itemize}
+\item Assuming the input and output have a $1$ Ohm resistance.
+\end{itemize}
+\end{block}
+
+\paragraph{Active filters}
+
+\begin{block}{First order active filter (with amplification)}
+
+  \begin{center}
+\includegraphics[width=6cm]{imgs/fourier/filtrage_actif_1o}
+
+\begin{itemize}
+\item Frequency response
+$$\tilde H(w)=\frac{A}{1+\frac{jw}{w_0}}$$
+where 
+$$A=\pause {\frac{R_1+R_2}{R_1}} \quad \text{et} \quad  w_0= \pause {\frac{1}{RC}}$$
+
+\item Parameters: $R, C,R_1,R_2$
+\item  Permute $R$ and $C$ for a high-pass filter.
+\end{itemize}
+\end{center}
+\end{block}
+
+\begin{block}{Second order active filter (Structure from \cite{sallen1955practical}) }
+\vspace{-5mm}
+  \begin{center}
+\includegraphics[width=.8\columnwidth]{imgs/fourier/filtrage_actif_2o}
+\end{center}
+\vspace{-5mm}
+\begin{itemize}
+\item Frequency response
+$$\tilde H(w)=\frac{K}{1+\frac{2zjw}{w_n}+\frac{(jw)^2}{w_n^2}}$$\vspace{-5mm}
+where \pause
+$$ w_n=\frac{1}{R\sqrt{C_1C_2}}\quad \text{et} \quad
+z=\sqrt{\frac{C_1}{C_2}} \frac{3-K}{2}\quad \text{et} \quad  K=\frac{r_1+r_2}{r_1}$$
+
+\item Parameters: $R, C_1,C_2,r_1,r_2$.
+
+\end{itemize}
+\end{block}
+
+\frametitle{Analog filtering : mechanical filter}
+
+
+\begin{columns}[T]
+  \begin{column}
+    \begin{block}{Virgo Gravitational waves detector \cite{acernese2014advanced}}
+      \begin{itemize}
+        \item Interferometer to detect gravitational waves.
+        \item Attenuate vibrations from the earth \cite{braccini1996seismic}
+        \item Objective : attenuations of $10^{-9}$ for high frequencies. 
+        \item Use a mirror in  a chamber with mechanical filters.
+        \item Use a series of mechanical filters for the attenuation.
+        \item Active correction for remaining low frequencies.
+      \end{itemize}
+    \end{block}
+  \end{column}\hspace{-1cm}
+
+\end{columns}
+
+
+\begin{center}
+  \includegraphics[width=.2\linewidth]{imgs/fourier/virgo_mechanical_filter.png}
+  \includegraphics[width=.75\linewidth]{imgs/fourier/virgo_mechanical_filter_response.png}
+\end{center}
+
 
 \subsection{Modulation}
 \label{sec:modulation}
