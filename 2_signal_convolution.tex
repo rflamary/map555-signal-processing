@@ -16,7 +16,7 @@ Example: $x(t)= \begin{cases}
 \sin(t)\exp\left(-\frac{t^2}{2}\right) & \text{for } t\geq 0
 \end{cases}$
 
-\paragraph{Periodicity}\index{Periodic signal}
+\paragraph{Periodicity}\index{Periodic signal} 
 A signal $x(t)$ is periodic of period $T_0$ is
 $$x(t-kT_0)=x(t),  \forall t\in\mathbb{R}, \forall k\in\mathbb{N}$$      
 
@@ -131,10 +131,10 @@ Unit: Joule, Calorie or Watt-hour (J, Cal ou Wh, 1 calorie = 4.2 J).
 \end{cases}
 \end{equation}
 %Exemple: On allume une ampoule.
-Also known as the step function.
+Also known as the step function. \index{Function!Heaviside}
 \end{block}
 
-\begin{block}{Rectangular function}
+\begin{block}{Rectangular function}\index{Function!Rectangular}
   \begin{equation}
    \Pi_T (t)=
    \begin{cases}
@@ -152,7 +152,7 @@ Also known as the step function.
    \end{block}
 
 
-   \begin{block}{Complex exponential }
+   \begin{block}{Complex exponential }\index{Function!Complex exponential}
     let $e_z(t)$ be the following function $\dbR \rightarrow \dbC$
  \begin{equation}
    \label{eq:expcomplexe}
@@ -205,6 +205,7 @@ Also known as the step function.
 \subsubsection{Dirac delta}
 
 \index{Dirac delta}
+\index{Function!Dirac delta}
 
 \begin{block}{Main properties of Dirac delta}
 
@@ -259,6 +260,27 @@ Also known as the step function.
         \item Has a bounded discrete variant.
       \end{itemize}
     \end{block}
+
+
+\frametitle{The dirac comb}\index{Dirac comb}\index{Function!Dirac comb}
+
+\begin{itemize}
+  \item The dirac comb is expressed as
+  \begin{equation}
+    \Sh_T(t)=\sum_{k=-\infty}^\infty \delta(t-kT)
+    \label{eq:dirac_comb}
+  \end{equation}
+  where $\Sh$ is the Cyrilic Sha symbol.
+  \item The Fourier Transform of the dirac comb is 
+  \begin{equation}
+    \mathcal{F}[\Sh_T(t)]=\sum_{k=-\infty}^\infty e^{2i\pi k T f}= \frac{1}{T}\sum_{k=-\infty}^\infty \delta\left(f-\frac{k}{T}\right) =  \frac{1}{T}\Sh_{\frac{1}{T}}(f)
+    \label{eq:ft_dirac_comb}
+  \end{equation}
+  where the second equality comes from the Poisson summation formula.
+  \item The dirac comb is used to perform a regular temporal sampling.
+  \item Multiplying a signal by the dirac comb corresponds to a convolution by a dirac comb in the Frequency domain (and vice versa).
+\end{itemize}
+%\end{example}
 
     \subsection{Discrete time and digital signals}
     \label{sec:}
@@ -340,7 +362,8 @@ Also known as the step function.
 
 
 
-\begin{block}{Linear Time Invariant (LTI) system}\vspace{-1mm}
+\begin{block}{Linear Time Invariant (LTI) system}\vspace{-1mm} \index{Linear
+Time Invariant system}\index{LTI system}
   \begin{itemize}
   \item A system describes a relation between an input $x(t)$ and an output $y(t)$.
   \item Properties of LTI systems:\vspace{-1mm}
@@ -366,7 +389,7 @@ $$x(t-\tau)\rightarrow y(t-\tau)$$
 
 
 
-\begin{block}{Ordinary Differential Equation (ODE)}
+\begin{block}{Ordinary Differential Equation (ODE)} \index{Ordinary Differential Equation}
   The system is defined by a linear equation of the form:
   \begin{equation}
     \label{eq:edo}
@@ -395,7 +418,7 @@ $$x(t-\tau)\rightarrow y(t-\tau)$$
 
 \subsection{Discrete time}
 
-  
+  \index{Discrete time!Definition}
 \begin{block}{Notations}
   \begin{itemize}
       \item $x(t)$ with $t\in\R$ is the analog signal.
@@ -415,6 +438,7 @@ $$x(t-\tau)\rightarrow y(t-\tau)$$
   \includegraphics[width=.8\linewidth]{imgs/sig_conv/dirac_delta_discrete}
 \end{center}\vspace{-5mm}
 
+\index{Discrete time!Dirac Delta}\index{Dirac delta}
 \begin{block}{Discrete dirac}
   We note the discrete dirac $\delta[n]$ defined as\vspace{-2mm}
   \begin{equation}
@@ -427,7 +451,7 @@ $$x(t-\tau)\rightarrow y(t-\tau)$$
   \end{equation}\vspace{-5mm}
 \end{block}
 
-\begin{block}{Discrete signal}
+\begin{block}{Discrete signal}\index{Discrete time!Signal}
   Any discrete signal $x[n]$ can be decomposed as a sum of translated discrete diracs:\vspace{-1mm}
   \begin{equation}
       x[n]=\sum_{k=-\infty}^\infty x[k]\delta[n-k]
@@ -438,7 +462,8 @@ $$x(t-\tau)\rightarrow y(t-\tau)$$
 \end{block}
 
 
-\begin{block}{Convolution between discrete signals}
+\begin{block}{Convolution between discrete signals}\index{Discrete
+time!Convolution}\index{Discrete convolution}\index{Digital filtering!Convolution}
   Let $x[n]$ and $h[n]$ two discrete signals. The convolution between them is expressed as:
   \begin{equation}
       x[n]\star h[n]= \sum_{k=-\infty}^\infty x[k]h[n-k]
@@ -447,7 +472,7 @@ $$x(t-\tau)\rightarrow y(t-\tau)$$
 
 \end{block}
 
-\begin{block}{Digital filter properties}
+\begin{block}{Digital filter properties}\index{Digital filtering!Properties}
   Let the discrete system/operator/filter $L$ described by its impulse response $h[n]$.
   \begin{itemize}
       \item \textbf{Causality} $L$ is causal if $h[n]=0,\ \forall n\leq 0$. $L$ is causal if 
@@ -473,11 +498,13 @@ $$x(t-\tau)\rightarrow y(t-\tau)$$
 \subsection{Finite signals}
 \label{sec:finite}
 
+\index{Finite signals}
+
 \begin{center}
   \includegraphics[width=.8\linewidth]{imgs/sig_conv/finite_discrete-crop.pdf}
 \end{center}
 
-\begin{block}{Finite discrete signals}
+\begin{block}{Finite discrete signals}\index{Discrete time!Finite Signal}
   \begin{itemize}
       \item Most of the theoretical results seen up to now correspond to signals $x[n]$ where $n\in\mathbb{Z}$.
       \item In practice recordings are only done for a finite amount of time resulting to only $N$ samples. 
@@ -488,7 +515,7 @@ $$x(t-\tau)\rightarrow y(t-\tau)$$
   \end{itemize}
 \end{block}
 
-\begin{block}{Discrete convolution of finite signals}
+\begin{block}{Discrete convolution of finite signals}\index{Discrete time!Convolution}\index{Discrete convolution}
   The convolution between $\tilde x[n]$ and $\tilde h[n]$ both finite signals of $n$ samples can be expressed as:
   \begin{equation}
       \tilde y[n]=\tilde x[n]\star\tilde h[n] =  \sum_{p=-\infty}^{+\infty}
@@ -502,7 +529,7 @@ $$x(t-\tau)\rightarrow y(t-\tau)$$
   \end{itemize}
 \end{block}
 
-\begin{block}{Circular convolution}
+\begin{block}{Circular convolution}\index{Discrete time!Circular convolution}\index{Circular convolution}
   When using the periodic version of the signals the circular convolution can be computed on a unique period of size $N$:
   \[
       x \ostar h [n] 
@@ -513,7 +540,8 @@ The circular convolution is rarely appropriate in real life images due to border
  % Note that thanks to the 
 \end{block}
 
-\begin{block}{Vector representation and convolution matrix}\vspace{-2mm}
+\begin{block}{Vector representation and convolution
+matrix}\vspace{-2mm}\index{Convolution matrix}
   \begin{itemize}
       \item Finite signal $x$ of $N$ samples can be represented as a vector $\x\in\mathbb{C}^N$.
       \item The convolution operator is linear and can be expressed as:\vspace{-1mm}
@@ -522,7 +550,7 @@ The circular convolution is rarely appropriate in real life images due to border
   \end{itemize} \vspace{-4mm}
 \end{block} %\vspace{-5mm}
 
-\begin{block}{Discrete convolution}
+\begin{block}{Discrete convolution}\index{Discrete convolution}
   The convolution operator when the values outside the support are $0$ can be expressed as\vspace{-2mm}
   $$ \hspace{-3mm}\C_\h\hspace{-.5mm} =\hspace{-.5mm}\begin{bmatrix}
       h[0] & 0 & \cdots& 0\\
@@ -535,7 +563,7 @@ The circular convolution is rarely appropriate in real life images due to border
   where $\C_\h\in \mathcal{M}_\mathbb{C}(2*N-1,N)$ is a Toeplitz matrix.
 \end{block}
 
-\begin{block}{Circular convolution}
+\begin{block}{Circular convolution}\index{Circular convolution}
   The circular convolution operator can be expressed as
   $$ \C_\h =\begin{bmatrix}
       h[0] & h[N-1] & \cdots& h[1]\\
@@ -564,7 +592,7 @@ The circular convolution is rarely appropriate in real life images due to border
 \end{center}\vspace{-2mm}
 
 \begin{block}{The Scipy \incode{scipy.signal.convolve} function:}\vspace{-2mm}
-  \begin{itemize}
+  \begin{itemize} \index{Python!\incode{scipy.signal.convolve}}
       \item Convolution between two signals of support respectively $N$ and $M$ samples supposing that their values are $0$ outside of the support.
       \item The third parameter is \incode{mode} that change the size of the output : \vspace{-1mm}
       \begin{itemize}
@@ -586,7 +614,7 @@ The circular convolution is rarely appropriate in real life images due to border
 \end{center}\vspace{-2mm}
 
 \begin{block}{The Scipy \incode{scipy.ndimage.convolve}  function:}\vspace{-2mm}
-  \begin{itemize}
+  \begin{itemize}\index{Python!\incode{scipy.ndimage.convolve}}
       \item Always return the same size as the first parameter by default.
       \item  The \incode{mode} parameter allows selecting the borders of a signal $x=(abcd)$:
       \begin{itemize}
@@ -607,16 +635,26 @@ The circular convolution is rarely appropriate in real life images due to border
 \subsection{Quantization and storage}
 \label{sec:}
 
+\index{Quantization}
+
 \section{Fundamental signal processing problems}
 \label{sec:sp_prob}
 
 \subsection{Filtering}
 
+\index{Filtering}
+
 
 \subsection{Deconvolution, unmixing and regression}
 
+\index{Deconvolution}
+
+\index{Inverse problem}
+
 
 \subsection{Blind source separation and deconvolution}
+
+\index{Blind source separation}
 
 
 
