@@ -629,6 +629,7 @@ The FT of sine and cosine is equal to $0$ everywhere except on the frequency $f_
     As a rule : try to avoid computing the integral but sometime you have to do it.
   \end{block}
 
+
    
 
 %\lipsum[2-4]
@@ -1720,6 +1721,232 @@ z=\sqrt{\frac{C_1}{C_2}} \frac{3-K}{2}\quad \text{et} \quad  K=\frac{r_1+r_2}{r_
 
 \subsection{Modulation}
 \label{sec:modulation}
+
+\frametitle{Modulation}
+  
+
+%\begin{block}{Definition}
+  Modulation is an encoding method that allows to transport a band-limited signal.
+  Demodulation is the reverse operation.
+%\end{block}
+\begin{exampleblock}{Motivations}
+  \begin{itemize}
+  \item Raw signal transmission often not efficient
+    (electromagnetic waves).
+%  \item Signal à transmettre de bande passante finie.
+  \item The change in frequencies allow transmitting several band-limited signals in parallel.
+  \item Use only of an authorized bandwidth.
+  \end{itemize}
+\end{exampleblock}
+
+\begin{block}{Definitions}
+\begin{itemize}
+  \item \textbf{Modulating signal} $x(t)$ is a band limited signal we want to transmit ($ X(f)=0\quad \text{pour}\quad |f|>f_x$).
+  \item \textbf{Carrier} is the periodic base signal $p(t)$ used for transportation often : $$ p(t)= \cos(2\pi f_p t)$$
+  \item \textbf{Modulated signal} $y(t)$ is a band-limited signal that can be transported in the physical medium (cable, air, optical fiber)
+\end{itemize}
+\end{block}
+
+\subsubsection{Amplitude modulation}
+
+\begin{columns}
+  \begin{column}{5cm}\centering
+     \includegraphics[width=.45\linewidth]{imgs/fourier/modul_amplitude}
+  \end{column}
+  \begin{column}{5cm}
+\includegraphics[width=.45\linewidth]{imgs/fourier/illustration_mod_ampl.pdf}
+     % \includegraphics[width=.9\linewidth]{imgs/mod_porteuse}\\
+     % \includegraphics[width=.9\linewidth]{imgs/mod_modulant}\\
+     % \includegraphics[width=.9\linewidth]{imgs/mod_module}
+  \end{column}
+\end{columns}
+ 
+
+\begin{block}{Definition: Amplitude Modulation (AM)}
+The carrier is multiplied by the modulating signal  $x(t)$ 
+  \begin{equation*}
+y(t)=A_c(1+k_sx(t))\cos(2\pi f_p t+\phi_m)
+\end{equation*}
+\vspace{-5mm}
+\begin{itemize}
+\item $k_s$: modulation factor
+\item $f_p$: carrier frequency
+\item $\phi_m$: phase (usually added during transmission).
+\end{itemize}
+\end{block}
+
+
+
+\begin{columns}
+  \begin{column}{6cm}
+
+     \begin{block}{Modulation index}
+       \begin{itemize}
+       \item  Envelope of the modulated signal.
+$$a(t)=A_c|1+k_sx(t)|$$
+       \item Maximum amplitude of modulating signal:
+
+$$M_x=\max_t|x(t)|$$
+       \item The index of modulation is defined as 
+$$h=k_sM_x$$
+\vspace{-5mm}
+\begin{itemize}
+\item $h<1$: under-modulation.
+\item $h>1$: over-modulation.
+\end{itemize}
+
+       \end{itemize}
+ 
+\end{block}
+\end{column}
+  \begin{column}{4.5cm}
+%\hspace{-1cm}
+      \includegraphics[width=0.5\linewidth]{imgs/fourier/mod_ampl_h.pdf}
+
+  \end{column}
+\end{columns}
+
+\begin{block}{Interpretation in the Fourier domain}
+  \begin{columns}
+  \begin{column}{5.5cm}
+    \begin{itemize}
+    \item Multiplication $\rightarrow$ Convolution.
+$$Y(f)=X(f)\star P(f)$$
+    \item The spectrum of the modulating signal is moved around the frequency $f_p$.
+    \item Simple way to transmit a band limited signal in a given bandwidth.
+    \item Modulated signal spectrum is contained in $f_p\pm f_x$.
+    \end{itemize}
+  \end{column}\hspace{-5mm}
+  \begin{column}{5.5cm}
+    \begin{center}\vspace{-1cm}\hspace{-5mm}
+      \includegraphics[width=0.5\linewidth]{imgs/fourier/mod_ampl_spectrum2.pdf}
+    \end{center}
+
+  \end{column}        
+  \end{columns}
+
+\end{block}
+
+\begin{block}{Synchronous demodulation}
+  Done with multiplying the signal with the carrier:
+\begin{align*}
+\label{eq:4}
+w(t)&=y(t)\cos(2\pi f_p t+\phi_d)\\
+&=A_s(1+k_sx(t))\cos(2\pi f_p t+\phi_m)\cos(2\pi f_p t+\phi_d)\\
+&={{\frac{A_s}{2}(1+k_sx(t))\cos(\phi_m-\phi_d)+\frac{A_s}{2}(1+k_sx(t))\cos(4\pi f_pt+\phi_m+\phi_d)}}
+\end{align*}%\pause
+After low pass filtering (and removing of the constant) one can recover 
+$$\hat x(t)=\frac{A_s}{2}k_sx(t)\cos(\phi_m-\phi_d)$$
+\begin{itemize}
+\item  $\cos(\phi_m-\phi_d)=1$ if $\phi_m=\phi_d$.
+\item Very important to have a good synchronization (requires active components).
+\end{itemize}
+\end{block}
+
+
+\begin{center}
+\includegraphics[width=.2\linewidth]{imgs/fourier/demod_asynchrone}\hspace{1cm}
+\includegraphics[width=.5\linewidth]{imgs/fourier/demod_ampl_async.pdf}
+\end{center}
+\begin{block}{Asynchrone demodulation}
+  \begin{itemize}
+  \item Synchronous demodulation can require complex active components.
+  \item A coarse approximation of the envelope of the signal can be done with a  simple diode/RC system.
+  \item Requires under-modulation because if $h<1$ then
+$$a(t)=A_c|1+k_sx(t)|=A_c+ A_ck_sx(t)$$
+\item Can require a lot of power for transmission.
+  \end{itemize}
+\end{block}
+
+
+\paragraph{Applications of AM}
+
+
+\begin{center}
+  \includegraphics[height=2.5cm]{imgs/fourier/Telefunken_arc_radiotelephone.jpg}
+  \includegraphics[height=2.5cm]{imgs/fourier/triode.png}
+  \includegraphics[height=2.5cm]{imgs/fourier/eiffel_antena.jpeg}
+  \includegraphics[height=2.5cm]{imgs/fourier/Emetteur-allouis3.jpg}
+\end{center}
+
+\begin{block}{Low frequency radio broadcasting}\vspace{-2mm}
+  \begin{itemize}
+    \item First AM transmission R. Fessenden on 23 December 1900 at  Cobb Island, Maryland (1.6Km).
+    \item 1907 Lee de Forest invents the triod vacuum tube allowing for a better amplification \cite{de1908space}.
+    \item Weather bulletin emitted from the Eiffel Tower in february 1922. 
+    \item \textbf{France Inter grandes ondes}
+    \begin{itemize}
+      \item Emitted between 1 January 1947 and 31 December 2016.
+      \item Allouis longwave transmitter (2000KW), now used for TDF time signal.
+    \end{itemize}
+  \end{itemize}
+\end{block}
+
+\begin{center}
+  \includegraphics[width=.65\linewidth]{imgs/fourier/illus_multiplex.pdf}
+\end{center}
+\vspace{-3mm}
+ %   \begin{columns}[t]
+  %    \begin{column}{6cm}
+   \begin{block}{Frequency-division multiplexing}
+        \begin{itemize}
+        \item Multiplexing: transmission of several signals in parallel.
+         \item Use of a different $f_p$ for each signal.
+        \item Every signal is band limited : if $\Delta f_p>2f_x$ then no loss of information.
+        
+      %  \item If $\Delta f_p>2f_x$ then no loss of information.
+        \item Frequency Hoping: Experimented by G. Marconi, Patent by N. Tesla \cite{tesla1903system}, proposed for secret communication by \cite{kiesler1942secret}.
+        \end{itemize}
+    \end{block}
+
+\subsubsection{Frequency modulation}
+
+\begin{center}
+  \includegraphics[width=.8\linewidth,height=2.5cm]{imgs/fourier/illustration_mod_frq.pdf}
+\end{center}
+\vspace{-5mm}
+    \begin{block}{Definition}
+      Frequency modulation (FM) consists in modifying the frequency of the carrier using $x(t)$. 
+      The modulated signal has the following form:
+\begin{equation*}
+  y(t)=\cos\left(2\pi  \int_0^tf(\tau)d\tau\right)
+\end{equation*}
+\vspace{-.5cm}
+\begin{itemize}
+\item $f(t)= f_p+  f_\Delta x(t)$ is the instantaneous frequency of the signal.
+  \begin{itemize}
+  \item If $x(t)=0$ we recover the carrier.
+  \item When $x(t)\neq 0$ the instantaneous frequency is modified by $x(t)$
+  \end{itemize}
+\item $f_\Delta$ is the frequency deviation (equivalent to $k_s$ in
+  AM).
+
+\end{itemize}
+    \end{block}
+
+    \begin{block}{Properties of Frequency Modulation}
+      \begin{itemize}
+\item More robust than AM (noise, atténuation) but propagation distance limited.
+\item More complex to implement (requires a Voltage Controled
+Oscillator VCO).
+\item Intuitively the spectrum of the modulated signal should be $\neq 0$
+only in the band $f_p\pm f_\Delta M_x$, BUT
+\item Continuous variation of the frequencies imply a spectrum on all frequencies.
+\item The Carson bandwidth rule states that most of the signal power (98\%) is in the band 
+\begin{equation*}
+  b=2(f_\Delta+f_{x})
+\end{equation*}
+%\item Cours de modulation en M1.
+      \end{itemize}
+    \end{block}
+
+    \begin{block}{Application of Frequency Modulation}
+      \begin{itemize}
+        \item FM radio broadcasting.
+        \item Frequency modulation synthesis (chiptunes).
+        \item Magnetic tape storage. 
+      \end{itemize}
+    \end{block}
 
 \subsection{Fourier optics}
 \label{sec:}

@@ -1,40 +1,79 @@
 
+
+In this chapter we introduce the concept of signal, and provide some necessary
+definitions. We will discus both analog and discrete time signals.
+Next we introduce the convolution operator that corresponds to
+numerous physical models and is used in modern machine learning. Finally we will
+discuss some common problems in signal processing.
+
 \section{Signals and properties}
+
+In this section we define what is a signal and discuss some of its properties.
+One interesting aspect of signal processing is that th object of interest can be
+modeled by mathematical object but corresponds most of the time to a physical
+object that was measures or observed. This is why in addition to more formal
+definitions we will discuss the implication of those properties in the physical realm.
 
 \subsection{Properties of analog signals}
 
-\paragraph{Analog signal} We define a signal is this course as a function of
-time or space. For instance $x:\R\rightarrow\dbC$ is a complex 1D signal of time
-$t\in\dbR$. $x:\R^2\rightarrow\dbR$ is a 2D image of space $\p\in\dbR^2$.
-
-\paragraph{Causality}\index{Causal signal}
-A signal $x(t)$ is causal if 
-$$ x(t)=0,\quad \forall x<0 $$
-
-Example: $x(t)= \begin{cases}
-0& \text{for } t<0\\
-\sin(t)\exp\left(-\frac{t^2}{2}\right) & \text{for } t\geq 0
-\end{cases}$
-
-\paragraph{Periodicity}\index{Periodic signal} 
-A signal $x(t)$ is periodic of period $T_0$ is
-$$x(t-kT_0)=x(t),  \forall t\in\mathbb{R}, \forall k\in\mathbb{N}$$      
+\paragraph{Analog signal} The first object we will discuss is the analog signal.
+We define a signal is this course as a function of time or space. For instance a
+univariate (unidimensional) complex signal is a function $x$ such that
+$$x:\R\rightarrow\dbC$$
+The function above will be sometime denoted in the document as $x(t)$ to show
+that it is a function of continuous time $t\in\dbR$. 
+Note that is this document some signals
+will be generalization of functions such as Schwartz distributions \cite{schwartz1951theorie}. 
 
 
-Example: $x(t)= %\begin{cases}
- % \exp(-\frac{(t-1)^2}{2})&  0<t<T\\
-  \exp\left(-\frac{(t-kT_0-1)^2}{2}\right)  \text{ for }kT_0<t<(k+1)T_0,\quad
-  \forall k\in\mathbb{N}$
+
+
+\paragraph{Properties of unidimensonal signal} We now define some properties for
+1D signals where we suppose that the input variable will be time.
+
+\begin{definition}[Causality]\index{Causal signal}
+  A signal $x(t)$ is causal if 
+$$ x(t)=0,\quad \forall t<0 $$
+\end{definition}
+
+\begin{example}[Causal signal] The following signal, illustrated in Figure \ref{fig:ex_causal_per}(left)  is causal:
+  $$x(t)= \begin{cases}
+    0& \text{for } t<0\\
+    \sin(t)\exp\left(-\frac{t^2}{2}\right) & \text{for } t\geq 0
+    \end{cases}$$
+\end{example}
+
+Causality is an interesting property in practice because it implies that the
+signal is not active in the past ($t<0$) which will simplify computations and
+integration in particular for convolution.
+
+\begin{definition}[Periodicity]\index{Periodic signal} 
+  A signal $x(t)$ is periodic of period $T_0$ if
+$$x(t-kT_0)=x(t), \quad \forall t\in\mathbb{R}, \forall k\in\mathbb{N}$$      
+\end{definition}
+
+
+\begin{example}[Periodic signal]
+  The following signal, illustrated in Figure \ref{fig:ex_causal_per}(right)  is
+  periodic:
+  $$x(t)= %\begin{cases}
+    % \exp(-\frac{(t-1)^2}{2})&  0<t<T\\
+     \exp\left(-\frac{(t-kT_0-1)^2}{2}\right),\quad kT_0<t<(k+1)T_0,\quad
+     \forall k\in\mathbb{N}$$
+\end{example}
+
+Periodic signals are fully defined by one period, this means that it can be
+measured or recorded only on one period and fully reconstructed afterwards. Alternatively a
+signal with a finite support in $[0,T_0]$ can be transformed into a periodic
+signal that might be easier to model (for instance with Fourier series).
   
 \begin{figure}[t]
     \centering
     \includegraphics[width=.45\linewidth]{imgs/sig_conv/sig_causal.pdf}
     \includegraphics[width=.45\linewidth]{imgs/sig_conv/sig_per.pdf}
-    \caption{Examples of Causal signal (left) and periodic signal (right).}
+    \caption{Examples of causal signal (left) and periodic signal (right).}
     \label{fig:ex_causal_per}
 \end{figure}
-
-
 
 \paragraph{Signal in $L_p$ space}\index{$L_p$ space}
 $L_p(S)$ is the set of functions whose absolute value to the power of $p$
