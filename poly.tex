@@ -49,6 +49,8 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /> Rémi Flamary, 2
 \setcounter{minitocdepth}{2}
 \mtcindent=10pt
 \usepackage{fancyvrb}
+\usepackage{thmtools}
+
 
 \DeclareFontFamily{U}{wncy}{}
 \DeclareFontShape{U}{wncy}{m}{n}{<->wncyr10}{}
@@ -85,6 +87,12 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /> Rémi Flamary, 2
 \newenvironment{columns}[1][]{ }{ }
 \newenvironment{column}[1][]{ }{ }
 \newcommand{\frametitle}[1]{\paragraph{#1}}
+
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{example}{Example}[chapter]
+
+% \usepackage{thmtools}
 
 \input{notations.tex}
 \input{notations_lwarp.tex}
@@ -220,8 +228,12 @@ The document is also in PDF format \href{poly.pdf}{here}
 %     \addcontentsline{toc}{chapter}{Bibliography}
 % \end{warpprint}
 
-
 \ForceHTMLPage
 \printindex
 \addcontentsline{toc}{chapter}{Index}
+\begin{warpprint}
+% \ForceHTMLPage
+\listoftheorems[title={List of definitions},ignoreall,show={definition},onlynamed={definition}]
+\addcontentsline{toc}{chapter}{List of definitions}
+\end{warpprint}
 \end{document}
